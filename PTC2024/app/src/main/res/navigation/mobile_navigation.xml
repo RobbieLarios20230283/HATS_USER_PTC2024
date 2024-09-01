@@ -37,4 +37,9 @@
         android:name="hats.hats_user_ptc2024.Asistencia"
         android:label="fragment_asistencia"
         tools:layout="@layout/fragment_asistencia" />
+    <fragment
+        android:id="@+id/servicio_Select"
+        android:name="hats.hats_user_ptc2024.Servicio_Select"
+        android:label="fragment_servicio__select"
+        tools:layout="@layout/fragment_servicio__select" />
 </navigation>
