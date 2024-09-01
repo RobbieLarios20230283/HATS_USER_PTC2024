@@ -27,4 +27,9 @@
         android:name="hats.hats_user_ptc2024.configuracion"
         android:label="fragment_configuracion"
         tools:layout="@layout/fragment_configuracion" />
+    <fragment
+        android:id="@+id/infolegal"
+        android:name="hats.hats_user_ptc2024.infolegal"
+        android:label="fragment_infolegal"
+        tools:layout="@layout/fragment_infolegal" />
 </navigation>
