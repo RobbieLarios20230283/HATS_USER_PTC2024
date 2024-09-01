@@ -32,4 +32,9 @@
         android:name="hats.hats_user_ptc2024.infolegal"
         android:label="fragment_infolegal"
         tools:layout="@layout/fragment_infolegal" />
+    <fragment
+        android:id="@+id/asistencia"
+        android:name="hats.hats_user_ptc2024.Asistencia"
+        android:label="fragment_asistencia"
+        tools:layout="@layout/fragment_asistencia" />
 </navigation>
