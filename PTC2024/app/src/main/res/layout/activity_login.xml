@@ -11,55 +11,65 @@
         android:id="@+id/txtcorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="62dp"
         android:ems="10"
         android:hint="Correo"
         android:inputType="text"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="177dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtcontraseña"
+        app:layout_constraintStart_toStartOf="@+id/txtcontraseña" />
 
     <EditText
         android:id="@+id/txtcontraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="83dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="284dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btniniciar"
+        app:layout_constraintEnd_toStartOf="@+id/imgvercontra" />
 
     <Button
         android:id="@+id/btniniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="62dp"
         android:text="Iniciar"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txtregistrarse"
+        app:layout_constraintEnd_toStartOf="@+id/txtregistrarse" />
 
     <ImageView
         android:id="@+id/imgvercontra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/vercontrasena"
-        tools:layout_editor_absoluteX="324dp"
-        tools:layout_editor_absoluteY="298dp" />
-
-    <EditText
-        android:id="@+id/txtregistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Registrarse"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="501dp" />
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtcontraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/vercontrasena" />
 
     <EditText
         android:id="@+id/txtrecupcontra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="105dp"
         android:ems="10"
         android:inputType="text"
         android:text="¿Olvidaste tu contraseña?"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="581dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtregistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="40dp"
+        android:text="Registrarse"
+        app:layout_constraintBottom_toTopOf="@+id/txtrecupcontra"
+        app:layout_constraintEnd_toEndOf="@+id/txtrecupcontra" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,35 +11,89 @@
         android:id="@+id/btnregistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="9dp"
         android:text="Registrarse"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="435dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnvolverlog"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/txtcorreoregis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="139dp"
         android:ems="10"
         android:hint="Correo"
         android:inputType="text"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintEnd_toEndOf="@+id/txtcontraregis"
+        app:layout_constraintStart_toStartOf="@+id/txtcontraregis"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtcontraregis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="75dp"
         android:ems="10"
-        android:hint="Registrarse"
+        android:hint="Contraseña"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgbacklog"
+        app:layout_constraintTop_toBottomOf="@+id/txtcorreoregis" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgbacklog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="563dp" />
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/imgverpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtcontraregis"
+        app:layout_constraintEnd_toEndOf="@+id/txtcontraregis"
+        app:srcCompat="@drawable/vercontrasena" />
+
+    <ImageView
+        android:id="@+id/imgverpass1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/txtconfrpass"
+        app:layout_constraintTop_toTopOf="@+id/txtconfrpass"
+        app:srcCompat="@drawable/vercontrasena" />
+
+    <Button
+        android:id="@+id/btnvolverlog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="134dp"
+        android:text="Iniciar Sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnregistrarse" />
+
+    <EditText
+        android:id="@+id/txtconfrpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="47dp"
+        android:ems="10"
+        android:hint="Confirmar Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtcontraregis"
+        app:layout_constraintTop_toBottomOf="@+id/txtcontraregis" />
 </androidx.constraintlayout.widget.ConstraintLayout>

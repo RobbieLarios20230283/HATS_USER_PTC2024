@@ -7,14 +7,14 @@ class ClaseConexion {
     fun CadenaConexion(): Connection? {
 
         try {
-            val url = "jdbc:oracle:thin:@192.168.0.6:1521:xe"
-            val usuario = "system"
-            val contrasena = "itr2023"
+            val url = "jdbc:oracle:thin:@AGREGAR IP:1521:xe"
+            val usuario = "SYSTEM"
+            val contrasena = "ITR2024"
 
             val connection = DriverManager.getConnection(url, usuario, contrasena)
             return connection
         }catch (e:Exception){
-            println("error:$e")
+            println("ERROR:$e")
             return null
         }
     }
