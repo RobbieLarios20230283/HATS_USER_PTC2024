@@ -7,9 +7,9 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/categorias"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Servicios" />
+        android:title="Categorias" />
 
     <item
         android:id="@+id/navigation_notifications"
