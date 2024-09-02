@@ -20,57 +20,56 @@ private const val ARG_PARAM2 = "param2"
 class Categorias_s : Fragment() {
 
 
-    // TODO: Rename and change types of parameters
+    class Categorias_s : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
+        // Parámetros del fragmento
+        private var param1: String? = null
+        private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            arguments?.let {
+                param1 = it.getString(ARG_PARAM1)
+                param2 = it.getString(ARG_PARAM2)
+            }
         }
 
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            // Infla el layout para este fragmento
+            val view = inflater.inflate(R.layout.fragment_categorias_s, container, false)
 
-    }
+            // Inicializa el botón utilizando la vista inflada
+            val btnfiltroPintura: Button = view.findViewById(R.id.btnPintura_C)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias_s, container, false)
-
-        val btnfiltroPintura: Button = view.findViewById(R.id.btnPintura_C)
-
-        btnfiltroPintura.setOnClickListener {
-        }
-
-        return view
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Categorias_s.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Categorias_s().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+            // Configura el OnClickListener para el botón
+            btnfiltroPintura.setOnClickListener {
+                // Acciones cuando se presiona el botón
             }
 
+            // Devuelve la vista inflada
+            return view
+        }
+
+        companion object {
+            /**
+             * Utiliza este método de fábrica para crear una nueva instancia de
+             * este fragmento usando los parámetros proporcionados.
+             *
+             * @param param1 Parámetro 1.
+             * @param param2 Parámetro 2.
+             * @return Una nueva instancia del fragmento Categorias_s.
+             */
+            @JvmStatic
+            fun newInstance(param1: String, param2: String) =
+                Categorias_s().apply {
+                    arguments = Bundle().apply {
+                        putString(ARG_PARAM1, param1)
+                        putString(ARG_PARAM2, param2)
+                    }
+                }
+        }
     }
-
-
 }
