@@ -47,4 +47,9 @@
         android:name="hats.hats_user_ptc2024.Categorias_s"
         android:label="fragment_categorias_s"
         tools:layout="@layout/fragment_categorias_s" />
+    <fragment
+        android:id="@+id/perfil"
+        android:name="hats.hats_user_ptc2024.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>

@@ -17,7 +17,7 @@
         android:title="Notificaciones" />
 
     <item
-        android:id="@+id/configuracion"
+        android:id="@+id/perfil"
         android:icon="@drawable/config"
         android:title="Configuración" />
 
