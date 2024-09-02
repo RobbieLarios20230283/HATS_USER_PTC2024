@@ -7,7 +7,7 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/categorias"
+        android:id="@+id/categorias_s"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Categorias" />
 
