@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/txtNombre_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#8AD3BF"
@@ -62,7 +62,7 @@
             app:layout_constraintVertical_bias="0.051" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/txtApellidos_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -80,12 +80,12 @@
             app:layout_constraintVertical_bias="0.365" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/txtTelefono_p"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Telefono"
-            android:inputType="text"
+            android:inputType="number"
             android:backgroundTint="#8AD3BF"
 
             android:textSize="20sp"
@@ -98,7 +98,7 @@
             app:layout_constraintVertical_bias="0.588" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/txtCorreo_p"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -116,7 +116,7 @@
             app:layout_constraintVertical_bias="0.588" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/txtDui_p"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -134,7 +134,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextText6"
+            android:id="@+id/txtfecha_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
