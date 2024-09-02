@@ -7,7 +7,7 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/fragment_categorias_s"
+        android:id="@+id/categorias_s"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Categorias" />
 
@@ -17,7 +17,7 @@
         android:title="Notificaciones" />
 
     <item
-        android:id="@+id/categorias_s"
+        android:id="@+id/configuracion"
         android:icon="@drawable/config"
         android:title="Configuración" />
 
