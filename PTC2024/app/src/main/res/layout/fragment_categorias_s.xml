@@ -8,152 +8,193 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Categorias_s">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D4F4EB">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="800dp"
-                    android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.464"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="800dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-                <Button
-                    android:id="@+id/btnCarpinteria_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Carpinteria"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.891"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.098" />
+        <Button
+            android:id="@+id/btnCarpinteria_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Carpinteria"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.891"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
 
-                <Button
-                    android:id="@+id/btnPintura_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Pintura"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.144"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.098" />
+        <Button
+            android:id="@+id/btnMecanica_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Mecanica"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.324" />
 
-                <Button
-                    android:id="@+id/btnMecanica_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Mecanica"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.144"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.245" />
+        <Button
+            android:id="@+id/btnCerrajeria_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Cerrajeria"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.324" />
 
-                <Button
-                    android:id="@+id/btnPlanchado_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Planchado"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.903"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.41" />
+        <Button
+            android:id="@+id/btnLimpieza_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Limpieza"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.489" />
 
-                <Button
-                    android:id="@+id/btnLimpieza_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Limpieza"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.144"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.41" />
+        <Button
+            android:id="@+id/btnPlanchado_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Planchado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.489" />
 
-                <Button
-                    android:id="@+id/btnFontaneria_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Fontaneria"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.144"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.58" />
+        <Button
+            android:id="@+id/btnFontaneria_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Fontaneria"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.659" />
 
-                <Button
-                    android:id="@+id/btnCocina_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Cocina"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.891"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.58" />
+        <Button
+            android:id="@+id/btnCocina_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Cocina"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.891"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.659" />
 
-                <Button
-                    android:id="@+id/btnJardineria_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Jardineria"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.899"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.752" />
+        <Button
+            android:id="@+id/btnJardineria_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Jardineria"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.899"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.831" />
 
-                <Button
-                    android:id="@+id/btnRe_Electro_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Reparacion de Electrodomesticos"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.752" />
+        <Button
+            android:id="@+id/btnRe_Electro_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Reparacion de Electrodomesticos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.831" />
 
-                <Button
-                    android:id="@+id/btnCerrajeria_C"
-                    android:layout_width="162dp"
-                    android:layout_height="85dp"
-                    android:backgroundTint="#507365"
-                    android:text="Cerrajeria"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.903"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.245" />
+        <Button
+            android:id="@+id/btnPintura_C"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#507365"
+            android:text="Pintura"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/View2"
+            android:layout_width="410dp"
+            android:layout_height="70dp"
+
+            android:background="@drawable/imagen2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categorías"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="69dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="756dp"
+            android:src="@drawable/hats_logo_1_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.013" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
