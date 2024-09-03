@@ -77,6 +77,8 @@ class Perfil : Fragment() {
                             setString(6, fecha)
                             setString(7, uuid)
                             executeUpdate()
+
+                            objConexion?.commit()
                         }
 
                         preparedStatement?.close()
@@ -90,7 +92,6 @@ class Perfil : Fragment() {
                 }
             }
         }
-
         return view
     }
 
