@@ -1,4 +1,4 @@
-package viewModel
+package `mipmap-hdpi`.viewModel
 
 import Modelo.ClaseConexion
 import androidx.lifecycle.LiveData
