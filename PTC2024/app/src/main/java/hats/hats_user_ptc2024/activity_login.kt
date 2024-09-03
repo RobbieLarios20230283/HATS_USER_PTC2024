@@ -36,7 +36,7 @@ class activity_login : AppCompatActivity() {
             val pantallaPrincipal = Intent(this, MainActivity::class.java)
             GlobalScope.launch(Dispatchers.IO) {
                 val objConexion = ClaseConexion().CadenaConexion()
-                val comprobarUsuario = objConexion?.prepareStatement("SELECT * FROM CredencialesEmpleador WHERE CorreoUS = ? AND ContrasenaUS = ?")!!
+                val comprobarUsuario = objConexion?.prepareStatement("SELECT * FROM Empleador WHERE CorreoUS = ? AND ContrasenaUS = ?")!!
                 comprobarUsuario.setString(1, txtCorreoLogin.text.toString())
                 comprobarUsuario.setString(2, txtPasswordLogin.text.toString())
                 val resultado = comprobarUsuario.executeQuery()

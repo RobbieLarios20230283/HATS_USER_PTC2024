@@ -29,7 +29,7 @@ class activity_registrarse : AppCompatActivity() {
             insets
         }
 
-        //1- Mando a llamar a todos los elementos de la vista
+        // Obtener elementos de la vista
         val imgAtrasregistrarse = findViewById<ImageView>(R.id.imgbacklog)
         val txtCorreoRegistro = findViewById<EditText>(R.id.txtcorreoregis)
         val txtPasswordRegistro = findViewById<EditText>(R.id.txtcontraregis)
@@ -39,36 +39,43 @@ class activity_registrarse : AppCompatActivity() {
         val btnCrearCuenta = findViewById<Button>(R.id.btnregistrarse)
         val btnRegresarLogin = findViewById<Button>(R.id.btnvolverlog)
 
-        //2- Programar los botones
-        //TODO: Boton para crear la cuenta//
-        //Al darle clic al boton se hace un insert a la base con los valores que escribe el usuario
+        // Botón para crear la cuenta
         btnCrearCuenta.setOnClickListener {
             GlobalScope.launch(Dispatchers.IO) {
-                //Creo un objeto de la clase conexion
                 val objConexion = ClaseConexion().CadenaConexion()
 
-                //Creo una variable que contenga un PrepareStatement
-                val crearUsuario =
-                    objConexion?.prepareStatement("INSERT INTO CredencialesEmpleador(uuidCredencial, CorreoUS, ContrasenaUS) VALUES (?, ?, ?)")!!
-                crearUsuario.setString(1, UUID.randomUUID().toString())
+                // Generar un UUID para el nuevo empleador
+                val uuidEmpleador = UUID.randomUUID().toString()
+
+                // Insertar datos en la base de datos
+                val crearUsuario = objConexion?.prepareStatement(
+                    "INSERT INTO Empleador(uuidEmpleador, CorreoUS, ContrasenaUS) VALUES (?, ?, ?)"
+                )!!
+                crearUsuario.setString(1, uuidEmpleador)
                 crearUsuario.setString(2, txtCorreoRegistro.text.toString())
                 crearUsuario.setString(3, txtPasswordRegistro.text.toString())
                 crearUsuario.executeUpdate()
+
                 withContext(Dispatchers.Main) {
-                    //Abro otra corrutina o "Hilo" para mostrar un mensaje y limpiar los campos
-                    //Lo hago en el Hilo Main por que el hilo IO no permite mostrar nada en pantalla
                     Toast.makeText(this@activity_registrarse, "Usuario creado", Toast.LENGTH_SHORT).show()
+
+                    // Iniciar la actividad PostLog y pasar el UUID
+                    val intent = Intent(this@activity_registrarse, PostLog::class.java)
+                    intent.putExtra("uuidEmpleador", uuidEmpleador)
+                    startActivity(intent)
+
+                    // Limpiar campos
                     txtCorreoRegistro.setText("")
                     txtPasswordRegistro.setText("")
                     txtConfirmarPassword.setText("")
+
+                    // Finalizar la actividad de registro
+                    finish()
                 }
             }
-
         }
 
-
-        ///////////////////////////TODO: otras cosas ////////////////////////
-        //Programo los botones para mostrar u ocultar la contraseña
+        // Mostrar u ocultar contraseñas
         imgVerPassword.setOnClickListener {
             if (txtPasswordRegistro.inputType == InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD) {
                 txtPasswordRegistro.inputType =
@@ -89,16 +96,14 @@ class activity_registrarse : AppCompatActivity() {
             }
         }
 
-        //Al darle clic a la flechita de arriba - Regresar al Login
+        // Regresar al Login
         imgAtrasregistrarse.setOnClickListener {
             val pantallaLogin = Intent(this, activity_login::class.java)
             startActivity(pantallaLogin)
         }
-        //Al darle clic a al boton que ya tengo una cuenta - Regresar al Login
         btnRegresarLogin.setOnClickListener {
             val pantallaLogin = Intent(this, activity_login::class.java)
             startActivity(pantallaLogin)
         }
-
     }
 }
