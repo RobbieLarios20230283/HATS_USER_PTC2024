@@ -31,6 +31,7 @@ class SharedViewModel : ViewModel() {
                     while (result.next()) {
                         val uuidSolicitud = result.getString("uuidSolicitud")
                         val uuidEmpleador = result.getString("uuidEmpleador")
+                        val uuidServicios = result.getString("uuidServicios")
                         val idServicio = result.getInt("idServicio")
                         val Precio = result.getFloat("Precio")
                         val Descripcion = result.getString("Descripcion")
@@ -38,8 +39,10 @@ class SharedViewModel : ViewModel() {
                         val latitud = result.getDouble("latitud")
                         val Fecha = result.getDate("Fecha").toString()
 
-                        val allValues = tbServicios(uuidSolicitud, uuidEmpleador, idServicio, Precio, Descripcion, longitud, latitud, Fecha)
-                        listaServicios.add(allValues)
+                        val allValues = tbServicios(
+                            uuidSolicitud,uuidEmpleador,uuidServicios,idServicio,Precio,Descripcion,longitud,latitud,Fecha
+                        )
+                   listaServicios.add(allValues)
                     }
 
                     result.close()

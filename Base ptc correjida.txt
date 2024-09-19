@@ -1,0 +1,146 @@
+-- Creación de tablas
+CREATE TABLE Empleador (
+    uuidEmpleador VARCHAR(36) PRIMARY KEY,
+    nombreEmpleador VARCHAR(50) ,
+    CorreoUS VARCHAR(50) NOT NULL,
+    ContrasenaUS VARCHAR(10) NOT NULL,
+    apellidoEmpleador VARCHAR(50) ,
+    Telefono VARCHAR(15) ,
+    DuiEmpleador VARCHAR(10) ,
+    Direccion VARCHAR(100),
+    fechanac VARCHAR(10)
+);
+CREATE TABLE Trabajador (
+    uuidTrabajador VARCHAR2(36) PRIMARY KEY,
+    nombreTrabajador VARCHAR2(50) NOT NULL,
+    Telefono NUMBER NOT NULL,
+    Correo VARCHAR2(50) NOT NULL,
+    Antecedentes BLOB,
+    uuidServicios VARCHAR2(36)NOT NULL,
+    DuiTrabajador VARCHAR2(10) NOT NULL,
+    Direccion VARCHAR2(100) NOT NULL,
+    FechaRegistro DATE NOT NULL,
+    
+     CONSTRAINT FK_Servicio FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
+);
+
+CREATE TABLE Solicitudes (
+    uuidSolicitud VARCHAR2(36) PRIMARY KEY,
+    uuidEmpleador VARCHAR2(36) NOT NULL,
+    uuidServicios VARCHAR2(36) NOT NULL,
+    idServicio NUMBER NOT NULL,
+    Precio FLOAT NOT NULL,
+    Descripcion VARCHAR2(100) NOT NULL,
+    longitud NUMBER(9, 6) NOT NULL,
+    latitud NUMBER(9, 6) NOT NULL,
+    Fecha DATE NOT NULL,
+    
+    CONSTRAINT FK_Solicitud_Empleador FOREIGN KEY (uuidEmpleador) REFERENCES Empleador(uuidEmpleador),
+     CONSTRAINT FK_Servicio_s FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
+);
+
+CREATE TABLE Trabajo (
+    uuidTrabajo VARCHAR2(36) PRIMARY KEY,
+    uuidEmpleador VARCHAR2(36) NOT NULL,
+    uuidTrabajador VARCHAR2(36) NOT NULL,
+    uuidServicios VARCHAR2(50) NOT NULL,
+    Precio FLOAT NOT NULL,
+    Descripcion VARCHAR2(100) NOT NULL,
+    longitud NUMBER(9, 6) NOT NULL,
+    latitud NUMBER(9, 6) NOT NULL,
+    uuidSolicitud VARCHAR2(36)NOT NULL,
+    Fecha DATE NOT NULL,
+
+    CONSTRAINT FK_Trabajo_Solicitud FOREIGN KEY (uuidSolicitud) REFERENCES Solicitudes(uuidSolicitud),
+    CONSTRAINT FK_Trabajo_Trabajador FOREIGN KEY (uuidTrabajador) REFERENCES Trabajador(uuidTrabajador),
+     CONSTRAINT FK_Servicio_t FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
+);
+
+CREATE TABLE Favoritos (
+    uuidFavoritos VARCHAR2(36) PRIMARY KEY,
+    favoritos VARCHAR2(250) NOT NULL,
+    uuidEmpleador VARCHAR2(36) NOT NULL,
+    uuidTrabajo VARCHAR2(36) NOT NULL,
+    
+    CONSTRAINT FK_TrabajoFav FOREIGN KEY (uuidTrabajo) REFERENCES Trabajo(uuidTrabajo),
+    CONSTRAINT FK_EmpleadorFav FOREIGN KEY (uuidEmpleador) REFERENCES Empleador(uuidEmpleador)
+);
+
+CREATE TABLE FAVEmpleador (
+    uuidFavEmp VARCHAR2(36) PRIMARY KEY,
+    uuidEmpleador VARCHAR2(36) NOT NULL,
+    uuidFavoritos VARCHAR2(36) NOT NULL,
+
+    CONSTRAINT FK_Favoritos FOREIGN KEY (uuidFavoritos) REFERENCES Favoritos(uuidFavoritos),
+    CONSTRAINT FK_ClientesFav FOREIGN KEY (uuidEmpleador) REFERENCES Empleador(uuidEmpleador)
+);
+
+CREATE TABLE Catalogo (
+    uuidCatalogo VARCHAR2(36) PRIMARY KEY,
+    uuidServicios VARCHAR2(36) NOT NULL,
+    uuidTrabajo VARCHAR2(36),
+    Nombre VARCHAR2(50) NOT NULL,
+
+    CONSTRAINT FK_Catalogo_Trabajo FOREIGN KEY (uuidTrabajo) REFERENCES Trabajo(uuidTrabajo),
+     CONSTRAINT FK_Servicio_c FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
+);
+
+CREATE TABLE Facturas (
+    uuidFactura VARCHAR2(36) PRIMARY KEY,
+    uuidTransaccion VARCHAR2(36) NOT NULL, 
+    monto FLOAT NOT NULL,
+    fecha DATE NOT NULL,
+    tipoTransaccion VARCHAR2(20) NOT NULL, 
+
+    CONSTRAINT FK_Factura_Transaccion FOREIGN KEY (uuidTransaccion) REFERENCES Solicitudes(uuidSolicitud)
+);
+
+CREATE TABLE Comentarios (
+    uuidComentario VARCHAR2(36) PRIMARY KEY,
+    uuidUsuario VARCHAR2(36) NOT NULL,
+    uuidTransaccion VARCHAR2(36) NOT NULL, 
+    comentario VARCHAR2(500) NOT NULL,
+    calificacion NUMBER(1,0) NOT NULL,
+    uuidFactura VARCHAR2(36) NOT NULL,
+
+    CONSTRAINT FK_Comentarios_Factura FOREIGN KEY (uuidFactura) REFERENCES Facturas(uuidFactura)
+);
+
+//Nuevas tablas
+create table tbservicios(
+uuidServicios VARCHAR2(36) PRIMARY KEY,
+NombreServicios VARCHAR2(50)not null
+);
+
+INSERT INTO tbservicios(uuidServicios,nombreservicios)Values(1,'Carpinteria');
+INSERT INTO tbservicios(uuidServicios,nombreservicios)Values(2,'Pintura');
+
+create table tbdirecciones(
+uuidDirecciones VARCHAR2(36) PRIMARY KEY,
+NombreDireccion VARCHAR2(50)not null,
+Ubicacion VARCHAR2(200)not null
+);
+
+DROP TABLE tbservicios CASCADE CONSTRAINTS;
+DROP TABLE tbdirecciones CASCADE CONSTRAINTS;
+DROP TABLE Comentarios CASCADE CONSTRAINTS;
+DROP TABLE Facturas CASCADE CONSTRAINTS;
+DROP TABLE Catalogo CASCADE CONSTRAINTS;
+DROP TABLE FAVEmpleador CASCADE CONSTRAINTS;
+DROP TABLE Favoritos CASCADE CONSTRAINTS;
+DROP TABLE Trabajo CASCADE CONSTRAINTS;
+DROP TABLE Solicitudes CASCADE CONSTRAINTS;
+DROP TABLE Trabajador CASCADE CONSTRAINTS;
+DROP TABLE Empleador CASCADE CONSTRAINTS;
+
+//INSERTS
+INSERT INTO Empleador (uuidEmpleador, nombreEmpleador, CorreoUS, ContrasenaUS, apellidoEmpleador, Telefono, DuiEmpleador, Direccion, fechanac) VALUES (
+    'ZPSKIBIDI','Juan','juan.perez@example.com','P@ssw0rd','Pérez','1234567890','123456789','Calle Falsa 123, Ciudad','1990-01-01'                        -- fechanac (Formato YYYY-MM-DD)
+);
+
+INSERT INTO Solicitudes (uuidSolicitud, uuidEmpleador, idServicio, Precio, Descripcion, longitud, latitud, Fecha) VALUES (
+    'a5e5d8f4-5678-4fef-b8b2-1a2b3c4d5e6f','e4c1f8b2-872d-4eae-b0b2-0d3fcb9c5d3a',123,250.75,'Servicio de limpieza general',100.567000,TO_DATE('2024-09-18', 'YYYY-MM-DD'));
+
+
+
+select * from empleador;
