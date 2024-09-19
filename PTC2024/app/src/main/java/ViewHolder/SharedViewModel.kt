@@ -29,12 +29,16 @@ class SharedViewModel : ViewModel() {
                     val result = query.executeQuery("select * from Servicios")
 
                     while (result.next()) {
-                        val uuidServicio = result.getString("uuidServicio")
-                        val uuidTServicio = result.getString("uuidTServicio")
-                        val nombreServicio = result.getString("nombreServicio")
+                        val uuidSolicitud = result.getString("uuidSolicitud")
+                        val uuidEmpleador = result.getString("uuidEmpleador")
+                        val idServicio = result.getInt("idServicio")
+                        val Precio = result.getFloat("Precio")
                         val Descripcion = result.getString("Descripcion")
+                        val longitud = result.getDouble("longitud")
+                        val latitud = result.getDouble("latitud")
+                        val Fecha = result.getDate("Fecha").toString()
 
-                        val allValues = tbServicios(uuidServicio, uuidTServicio, nombreServicio, Descripcion)
+                        val allValues = tbServicios(uuidSolicitud, uuidEmpleador, idServicio, Precio, Descripcion, longitud, latitud, Fecha)
                         listaServicios.add(allValues)
                     }
 

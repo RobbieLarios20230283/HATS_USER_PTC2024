@@ -1,8 +1,12 @@
 package Modelo
 
 data class tbServicios(
-    val uuidServicio: String,
-    val uuidTServicio: String,
-    var nombreServicio: String,
-    val Descripcion: String
+    val uuidSolicitud: String,
+    val uuidEmpleador: String,
+    val idServicio: Int,
+    val Precio: Float,
+    val Descripcion: String,
+    val longitud: Double,
+    val latitud: Double,
+    val Fecha: String
 )
