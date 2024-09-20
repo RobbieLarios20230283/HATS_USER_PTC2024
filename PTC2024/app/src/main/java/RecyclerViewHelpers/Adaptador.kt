@@ -19,8 +19,13 @@ class Adaptador(private var Data: List<tbServicios>): RecyclerView.Adapter<ViewH
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = Data[position]
-        holder.title.text = item.nombreServicio
+        holder.title.text = item.nombreServicios
+
+        holder.btnCategorias.setOnClickListener()
+
     }
+
+
 
 
 

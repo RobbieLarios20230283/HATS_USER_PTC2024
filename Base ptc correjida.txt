@@ -1,15 +1,46 @@
+//Nuevas tablas
+
+CREATE TABLE Catalogo (
+    uuidCatalogo VARCHAR2(36) PRIMARY KEY,
+    Nombre VARCHAR2(50) NOT NULL
+);
+
+INSERT INTO Catalogo (uuidCatalogo, Nombre)
+VALUES ('1', 'Carpinteria');
+
+create table tbservicios(
+uuidServicios VARCHAR2(36) PRIMARY KEY,
+uuidCatalogo varchar2(36) not null,
+NombreServicios VARCHAR2(50)not null,
+
+CONSTRAINT FK_IdCatalogo FOREIGN KEY (uuidCatalogo) REFERENCES Catalogo(uuidCatalogo)
+);
+
+INSERT INTO tbServicios (uuidServicios, uuidCatalogo, NombreServicios)
+VALUES ('2AQZ', '1', 'Servicio de Reparación');
+
+
+create table tbdirecciones(
+uuidDirecciones VARCHAR2(36) PRIMARY KEY,
+NombreDireccion VARCHAR2(50)not null,
+Ubicacion VARCHAR2(200)not null
+);
+
 -- Creación de tablas
 CREATE TABLE Empleador (
     uuidEmpleador VARCHAR(36) PRIMARY KEY,
+    uuidDirecciones VARCHAR(36)NOT NULL,
     nombreEmpleador VARCHAR(50) ,
     CorreoUS VARCHAR(50) NOT NULL,
     ContrasenaUS VARCHAR(10) NOT NULL,
-    apellidoEmpleador VARCHAR(50) ,
-    Telefono VARCHAR(15) ,
-    DuiEmpleador VARCHAR(10) ,
-    Direccion VARCHAR(100),
-    fechanac VARCHAR(10)
+    apellidoEmpleador VARCHAR(50)NOT NULL ,
+    Telefono VARCHAR(15)NOT NULL,
+    DuiEmpleador VARCHAR(10)NOT NULL,
+    fechanac VARCHAR(10)NOT NULL,
+    
+CONSTRAINT FK_Direccion FOREIGN KEY (uuidDirecciones) REFERENCES tbdirecciones(uuidDirecciones)
 );
+
 CREATE TABLE Trabajador (
     uuidTrabajador VARCHAR2(36) PRIMARY KEY,
     nombreTrabajador VARCHAR2(50) NOT NULL,
@@ -26,9 +57,9 @@ CREATE TABLE Trabajador (
 
 CREATE TABLE Solicitudes (
     uuidSolicitud VARCHAR2(36) PRIMARY KEY,
+    nombreSolicitud VARCHAR2(36) NOT NULL,
     uuidEmpleador VARCHAR2(36) NOT NULL,
     uuidServicios VARCHAR2(36) NOT NULL,
-    idServicio NUMBER NOT NULL,
     Precio FLOAT NOT NULL,
     Descripcion VARCHAR2(100) NOT NULL,
     longitud NUMBER(9, 6) NOT NULL,
@@ -75,16 +106,6 @@ CREATE TABLE FAVEmpleador (
     CONSTRAINT FK_ClientesFav FOREIGN KEY (uuidEmpleador) REFERENCES Empleador(uuidEmpleador)
 );
 
-CREATE TABLE Catalogo (
-    uuidCatalogo VARCHAR2(36) PRIMARY KEY,
-    uuidServicios VARCHAR2(36) NOT NULL,
-    uuidTrabajo VARCHAR2(36),
-    Nombre VARCHAR2(50) NOT NULL,
-
-    CONSTRAINT FK_Catalogo_Trabajo FOREIGN KEY (uuidTrabajo) REFERENCES Trabajo(uuidTrabajo),
-     CONSTRAINT FK_Servicio_c FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
-);
-
 CREATE TABLE Facturas (
     uuidFactura VARCHAR2(36) PRIMARY KEY,
     uuidTransaccion VARCHAR2(36) NOT NULL, 
@@ -106,20 +127,7 @@ CREATE TABLE Comentarios (
     CONSTRAINT FK_Comentarios_Factura FOREIGN KEY (uuidFactura) REFERENCES Facturas(uuidFactura)
 );
 
-//Nuevas tablas
-create table tbservicios(
-uuidServicios VARCHAR2(36) PRIMARY KEY,
-NombreServicios VARCHAR2(50)not null
-);
 
-INSERT INTO tbservicios(uuidServicios,nombreservicios)Values(1,'Carpinteria');
-INSERT INTO tbservicios(uuidServicios,nombreservicios)Values(2,'Pintura');
-
-create table tbdirecciones(
-uuidDirecciones VARCHAR2(36) PRIMARY KEY,
-NombreDireccion VARCHAR2(50)not null,
-Ubicacion VARCHAR2(200)not null
-);
 
 DROP TABLE tbservicios CASCADE CONSTRAINTS;
 DROP TABLE tbdirecciones CASCADE CONSTRAINTS;
@@ -128,7 +136,7 @@ DROP TABLE Facturas CASCADE CONSTRAINTS;
 DROP TABLE Catalogo CASCADE CONSTRAINTS;
 DROP TABLE FAVEmpleador CASCADE CONSTRAINTS;
 DROP TABLE Favoritos CASCADE CONSTRAINTS;
-DROP TABLE Trabajo CASCADE CONSTRAINTS;
+DROP TABlE Trabajo CASCADE CONSTRAINTS;
 DROP TABLE Solicitudes CASCADE CONSTRAINTS;
 DROP TABLE Trabajador CASCADE CONSTRAINTS;
 DROP TABLE Empleador CASCADE CONSTRAINTS;
@@ -144,3 +152,4 @@ INSERT INTO Solicitudes (uuidSolicitud, uuidEmpleador, idServicio, Precio, Descr
 
 
 select * from empleador;
+
