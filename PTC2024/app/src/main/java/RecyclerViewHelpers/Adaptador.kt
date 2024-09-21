@@ -21,8 +21,6 @@ class Adaptador(private var Data: List<tbServicios>): RecyclerView.Adapter<ViewH
         val item = Data[position]
         holder.title.text = item.nombreServicios
 
-        holder.btnCategorias.setOnClickListener()
-
     }
 
 

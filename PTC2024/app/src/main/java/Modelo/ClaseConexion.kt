@@ -8,7 +8,7 @@ class ClaseConexion {
 
         try {
             val url = "jdbc:oracle:thin:@192.168.0.16 :1521:xe"
-            val usuario = "System"
+            val usuario = "sistem"
             val contrasena = "ITR2024"
 
             val connection = DriverManager.getConnection(url, usuario, contrasena)
