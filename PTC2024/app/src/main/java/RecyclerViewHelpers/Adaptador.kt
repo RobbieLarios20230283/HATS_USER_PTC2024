@@ -1,10 +1,25 @@
 package RecyclerViewHelpers;
 
+import Modelo.ClaseConexion
 import Modelo.tbServicios
+import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import hats.hats_user_ptc2024.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 class Adaptador(private var Data: List<tbServicios>): RecyclerView.Adapter<ViewHolder>() {
 
@@ -21,6 +36,15 @@ class Adaptador(private var Data: List<tbServicios>): RecyclerView.Adapter<ViewH
         val item = Data[position]
         holder.title.text = item.nombreServicios
 
+    }
+    private fun findNavController(view: View): NavController {
+        val fragment = view.findFragment<Fragment>()
+        return NavHostFragment.findNavController(fragment)
+    }
+
+    fun setData(newData: List<tbServicios>) {
+        Data = newData
+        notifyDataSetChanged()
     }
 
 
