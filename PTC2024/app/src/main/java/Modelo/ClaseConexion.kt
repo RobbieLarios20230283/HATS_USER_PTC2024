@@ -7,7 +7,7 @@ class ClaseConexion {
     fun CadenaConexion(): Connection? {
 
         try {
-            val url = "jdbc:oracle:thin:@192.168.0.8:1521:xe"
+            val url = "jdbc:oracle:thin:@192.168.0.10:1521:xe"
             val usuario = "system"
             val contrasena = "ITR2024"
 

@@ -43,13 +43,13 @@
         android:label="fragment_servicio__select"
         tools:layout="@layout/fragment_servicio__select" />
     <fragment
-        android:id="@+id/categorias_s"
-        android:name="hats.hats_user_ptc2024.Categorias_s"
-        android:label="fragment_categorias_s"
-        tools:layout="@layout/fragment_categorias_s" />
-    <fragment
         android:id="@+id/perfil"
         android:name="hats.hats_user_ptc2024.Perfil"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/categorias"
+        android:name="hats.hats_user_ptc2024.categorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" />
 </navigation>

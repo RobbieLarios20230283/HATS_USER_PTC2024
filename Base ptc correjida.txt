@@ -27,16 +27,17 @@ Ubicacion VARCHAR2(200)not null
 );
 
 -- Creación de tablas
-CREATE TABLE Empleador (
+    CREATE TABLE Empleador (
     uuidEmpleador VARCHAR(36) PRIMARY KEY,
-    uuidDirecciones VARCHAR(36)NOT NULL,
     nombreEmpleador VARCHAR(50) ,
     CorreoUS VARCHAR(50) NOT NULL,
     ContrasenaUS VARCHAR(10) NOT NULL,
-    apellidoEmpleador VARCHAR(50)NOT NULL ,
-    Telefono VARCHAR(15)NOT NULL,
-    DuiEmpleador VARCHAR(10)NOT NULL,
-    fechanac VARCHAR(10)NOT NULL,
+    apellidoEmpleador VARCHAR(50) ,
+    Telefono VARCHAR(15) , -- Utiliza VARCHAR para compatibilidad
+    DuiEmpleador VARCHAR(10) ,
+    uuidDirecciones VARCHAR(36),
+    Direccion VARCHAR(100),
+    fechanac VARCHAR(10), -- Fecha de nacimiento como VARCHAR
     
 CONSTRAINT FK_Direccion FOREIGN KEY (uuidDirecciones) REFERENCES tbdirecciones(uuidDirecciones)
 );
