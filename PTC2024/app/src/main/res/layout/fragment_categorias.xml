@@ -27,7 +27,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/btnCarpinteria_C"
+            android:id="@+id/btnCarpinteria"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -41,7 +41,7 @@
             app:layout_constraintVertical_bias="0.177" />
 
         <Button
-            android:id="@+id/btnMecanica_C"
+            android:id="@+id/btnMecanica"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -55,7 +55,7 @@
             app:layout_constraintVertical_bias="0.324" />
 
         <Button
-            android:id="@+id/btnCerrajeria_C"
+            android:id="@+id/btnCerrajeria"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -69,7 +69,7 @@
             app:layout_constraintVertical_bias="0.324" />
 
         <Button
-            android:id="@+id/btnLimpieza_C"
+            android:id="@+id/btnLimpieza"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -83,7 +83,7 @@
             app:layout_constraintVertical_bias="0.489" />
 
         <Button
-            android:id="@+id/btnPlanchado_C"
+            android:id="@+id/btnPlanchado"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -97,7 +97,7 @@
             app:layout_constraintVertical_bias="0.489" />
 
         <Button
-            android:id="@+id/btnFontaneria_C"
+            android:id="@+id/btnFontaneria"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -111,7 +111,7 @@
             app:layout_constraintVertical_bias="0.659" />
 
         <Button
-            android:id="@+id/btnCocina_C"
+            android:id="@+id/btnCocina"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -124,7 +124,7 @@
             app:layout_constraintVertical_bias="0.659" />
 
         <Button
-            android:id="@+id/btnJardineria_C"
+            android:id="@+id/btnJardineria"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -138,7 +138,7 @@
             app:layout_constraintVertical_bias="0.831" />
 
         <Button
-            android:id="@+id/btnRe_Electro_C"
+            android:id="@+id/btnRe_Electro"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
@@ -152,7 +152,7 @@
             app:layout_constraintVertical_bias="0.831" />
 
         <Button
-            android:id="@+id/btnPintura_C"
+            android:id="@+id/btnPintura"
             android:layout_width="162dp"
             android:layout_height="85dp"
             android:backgroundTint="#507365"
