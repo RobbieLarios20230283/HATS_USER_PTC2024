@@ -28,13 +28,61 @@ class categorias : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnCarpinteria: Button = view.findViewById(R.id.btnCarpinteria)
+        val btnPintura: Button = view.findViewById(R.id.btnPintura)
+        val btnElectricidad: Button = view.findViewById(R.id.btnElectroRep)
+        val btnMecanica: Button = view.findViewById(R.id.btnMecanica)
+
+        val btnFontaneria: Button = view.findViewById(R.id.btnFontaneria)
+        val btnLimpieza: Button = view.findViewById(R.id.btnLimpieza)
+        val btnPlanchado: Button = view.findViewById(R.id.btnPlanchado)
+        val btnCerrajeria: Button = view.findViewById(R.id.btnCerrajeria)
 
         btnCarpinteria.setOnClickListener {
             miValor = "1"
 
-            findNavController().navigate(R.id.perfil)
+            findNavController().navigate(R.id.servicios)
+        }
+
+        btnPintura.setOnClickListener {
+            miValor = "2"
+
+            findNavController().navigate(R.id.servicios)
+        }
+        btnElectricidad.setOnClickListener {
+            miValor = "3"
+
+            findNavController().navigate(R.id.servicios)
+        }
+        btnMecanica.setOnClickListener {
+            miValor = "4"
+
+            findNavController().navigate(R.id.servicios)
+        }
+        btnFontaneria.setOnClickListener {
+            miValor = "5"
+
+            findNavController().navigate(R.id.servicios)
+        }
+        btnLimpieza.setOnClickListener {
+            miValor = "6"
+
+            findNavController().navigate(R.id.servicios)
+        }
+
+        btnCerrajeria.setOnClickListener {
+            miValor = "7"
+
+            findNavController().navigate(R.id.servicios)
+        }
+
+        btnPlanchado.setOnClickListener {
+            miValor = "8"
+
+            findNavController().navigate(R.id.servicios)
         }
     }
+
+
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null

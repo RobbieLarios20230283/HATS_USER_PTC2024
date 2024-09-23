@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class ServicioSelect : Fragment() {
+class Servicios : Fragment() {
     private var miAdaptador: Adaptador? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,17 +29,11 @@ class ServicioSelect : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_servicio__select, container, false)
+        val root = inflater.inflate(R.layout.fragment_servicios, container, false)
 
 
-        val rcvSolicitudes = root.findViewById<RecyclerView>(R.id.rcvSolicitudes)
-        //Asignarle un Layout al RecyclerView
+        val rcvSolicitudes = root.findViewById<RecyclerView>(R.id.rcvServicios)
         rcvSolicitudes.layoutManager = LinearLayoutManager(requireContext())
-
-
-
-
-
 
 
         suspend fun MostrarDatos(): List<tbServicios> {
@@ -60,9 +54,6 @@ class ServicioSelect : Fragment() {
             }
             return listaServicios
         }
-
-
-
 
         CoroutineScope(Dispatchers.IO).launch{
             val ServiciosDB = MostrarDatos()

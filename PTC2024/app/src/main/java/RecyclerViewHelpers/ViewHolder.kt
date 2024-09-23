@@ -9,6 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
     val title: TextView = view.findViewById(R.id.txtTituloCard)
-    val btnPintura : Button = view.findViewById(R.id.btnPintura_C)
+    val btnPintura : Button = view.findViewById(R.id.btnPintura)
 
 }

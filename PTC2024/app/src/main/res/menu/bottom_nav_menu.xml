@@ -17,7 +17,7 @@
         android:title="servicio_Select" />
 
     <item
-        android:id="@+id/ajustes"
+        android:id="@+id/direcciones"
         android:icon="@drawable/config"
         android:title="Configuración" />
 

@@ -38,11 +38,6 @@
         android:label="fragment_asistencia"
         tools:layout="@layout/fragment_asistencia" />
     <fragment
-        android:id="@+id/servicioSelect"
-        android:name="hats.hats_user_ptc2024.Servicio_Select"
-        android:label="fragment_servicio__select"
-        tools:layout="@layout/fragment_servicio__select" />
-    <fragment
         android:id="@+id/perfil"
         android:name="hats.hats_user_ptc2024.Perfil"
         android:label="fragment_perfil"
@@ -52,4 +47,19 @@
         android:name="hats.hats_user_ptc2024.categorias"
         android:label="fragment_categorias"
         tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/servicios"
+        android:name="hats.hats_user_ptc2024.Servicios"
+        android:label="fragment_servicios"
+        tools:layout="@layout/fragment_servicios" />
+    <fragment
+        android:id="@+id/direcciones"
+        android:name="hats.hats_user_ptc2024.Direcciones"
+        android:label="fragment_direcciones"
+        tools:layout="@layout/fragment_direcciones" />
+    <fragment
+        android:id="@+id/misDirecciones"
+        android:name="hats.hats_user_ptc2024.MisDirecciones"
+        android:label="fragment_mis_direcciones"
+        tools:layout="@layout/fragment_mis_direcciones" />
 </navigation>
