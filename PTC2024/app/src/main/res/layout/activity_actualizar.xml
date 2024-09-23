@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/dialog_update_paciente.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/main">
+
+    <EditText
+        android:id="@+id/txtNombreDireccion_A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="actualizar Nombre"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/txtDireccion_A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="actualizar Direcciones"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</LinearLayout>

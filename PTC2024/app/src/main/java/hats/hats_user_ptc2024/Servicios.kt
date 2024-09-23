@@ -1,5 +1,4 @@
 package hats.hats_user_ptc2024
-
 import Modelo.ClaseConexion
 import Modelo.tbServicios
 import RecyclerViewHelpers.Adaptador
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -16,53 +14,47 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class Servicios : Fragment() {
+    private var miAdaptador: Adaptador? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+        }
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
 
+    ): View {
+        val root = inflater.inflate(R.layout.fragment_servicios, container, false)
 
+        val rcvServicios = root.findViewById<RecyclerView>(R.id.rcvServicios)
+        rcvServicios.layoutManager = LinearLayoutManager(requireContext())
 
+         fun MostrarDatos(): List<tbServicios> {
 
-        // Parámetros del fragmento
-        private var param1: String? = null
-        private var param2: String? = null
+            val objConexion = ClaseConexion().CadenaConexion()
+            val statement = objConexion?.createStatement()
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            arguments?.let {
-                param1 = it.getString(ARG_PARAM1)
-                param2 = it.getString(ARG_PARAM2)
+            val ResultSet = statement?.executeQuery("select * from tbservicios")!!
+            val listaServicios = mutableListOf<tbServicios>()
+
+            while (ResultSet.next()) {
+                val uuidServicios = ResultSet.getString("uuidServicios")
+                val uuidCatalogo = ResultSet.getString("uuidCatalogo")
+                val nombreServicios = ResultSet.getString("NombreServicios")
+                val allValues = tbServicios(uuidServicios, uuidCatalogo, nombreServicios)
+                listaServicios.add(allValues)
+            }
+            return listaServicios
+        }
+        CoroutineScope(Dispatchers.IO).launch{
+            val ServiciosDB = MostrarDatos()
+            withContext(Dispatchers.Main){
+                miAdaptador = Adaptador(ServiciosDB)
+                rcvServicios.adapter = miAdaptador
             }
         }
-
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            // Infla el layout para este fragmento
-            val view = inflater.inflate(R.layout.fragment_servicios, container, false)
-
-            return view
-        }
-
-        companion object {
-            /**
-             * Utiliza este método de fábrica para crear una nueva instancia de
-             * este fragmento usando los parámetros proporcionados.
-             *
-             * @param param1 Parámetro 1.
-             * @param param2 Parámetro 2.
-             * @return Una nueva instancia del fragmento Categorias_s.
-             */
-            @JvmStatic
-            fun newInstance(param1: String, param2: String) =
-                Servicios().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
-        }
+        return root
+    }
 }

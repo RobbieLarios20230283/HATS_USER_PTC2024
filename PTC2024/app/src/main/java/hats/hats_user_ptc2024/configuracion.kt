@@ -1,10 +1,14 @@
 package hats.hats_user_ptc2024
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
+import hats.hats_user_ptc2024.categorias.VariableGlobal.miValor
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,12 +25,49 @@ class configuracion : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnPerfilC: Button = view.findViewById(R.id.btn_d_personales)
+        val btnAsistencia: Button = view.findViewById(R.id.btn_asistencia_linea)
+        val btnNotificaciones: Button = view.findViewById(R.id.btn_notificaciones)
+        val btnInfoLegal: Button = view.findViewById(R.id.btn_info_legal)
+        val btnDirreccion: Button = view.findViewById(R.id.btn_direcciones)
+        val btnCerrarCesión: Button = view.findViewById(R.id.btnCerrarCesión)
+
+        btnPerfilC.setOnClickListener {
+            findNavController().navigate(R.id.perfil)
+        }
+        btnDirreccion.setOnClickListener {
+            findNavController().navigate(R.id.direcciones)
+        }
+        btnAsistencia.setOnClickListener {
+            findNavController().navigate(R.id.asistencia)
+        }
+        btnNotificaciones.setOnClickListener {
+            findNavController().navigate(R.id.notificaciones)
+        }
+        btnInfoLegal.setOnClickListener {
+            findNavController().navigate(R.id.infolegal)
+        }
+        btnCerrarCesión.setOnClickListener {
+            val intent = Intent(requireContext(), activity_login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+            requireActivity().finish()
+        }
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(

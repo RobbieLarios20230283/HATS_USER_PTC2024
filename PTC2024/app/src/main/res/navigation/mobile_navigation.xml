@@ -62,4 +62,14 @@
         android:name="hats.hats_user_ptc2024.MisDirecciones"
         android:label="fragment_mis_direcciones"
         tools:layout="@layout/fragment_mis_direcciones" />
+    <fragment
+        android:id="@+id/notificaciones"
+        android:name="hats.hats_user_ptc2024.Notificaciones"
+        android:label="fragment_notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
+    <fragment
+        android:id="@+id/detalles"
+        android:name="hats.hats_user_ptc2024.Detalles"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" />
 </navigation>

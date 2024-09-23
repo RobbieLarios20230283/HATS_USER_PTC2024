@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
     val title: TextView = view.findViewById(R.id.txtTituloCard)
+    val tittleDirecciones: TextView = view.findViewById(R.id.txtTituloDireccion)
+    val imgActualizar: Button = view.findViewById(R.id.imgActualizar)
+    val imgBorrar: Button = view.findViewById(R.id.imgBorrar)
+
     val btnPintura : Button = view.findViewById(R.id.btnPintura)
 
 }

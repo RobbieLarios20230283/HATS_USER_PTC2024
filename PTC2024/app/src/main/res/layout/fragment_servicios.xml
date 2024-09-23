@@ -23,7 +23,7 @@
         android:id="@+id/button6"
         android:layout_width="187dp"
         android:layout_height="121dp"
-        android:text="Button"
+        android:text="Recicler de servicios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
