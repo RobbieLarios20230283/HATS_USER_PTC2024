@@ -23,7 +23,7 @@
             android:layout_width="230dp"
             android:layout_height="match_parent"
             android:text="Text"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 

@@ -1,10 +1,20 @@
 package hats.hats_user_ptc2024
 
+import Modelo.ClaseConexion
+import Modelo.tbDirecciones
+import RecyclerViewHelpers.AdaptadorDirecciones
+import RecyclerViewHelpers.AdaptadorServicio
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,13 +39,61 @@ class MisDirecciones : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_infolegal, container, false)
+        return inflater.inflate(R.layout.fragment_mis_direcciones, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val rcvDirecciones: RecyclerView = view.findViewById(R.id.rcvDireccionesC)
+        rcvDirecciones.layoutManager = LinearLayoutManager(requireContext())
+
+        // Cargar las direcciones en una corrutina en el hilo de IO
+        CoroutineScope(Dispatchers.IO).launch {
+            val direccionesDB = MisDirecciones()  // Aquí obtenemos la lista de direcciones desde la BD
+
+            // Con esto movemos el resultado al hilo principal
+            withContext(Dispatchers.Main) {
+                // Usa el adaptador correcto para las direcciones
+                val adapterD = AdaptadorDirecciones(direccionesDB)
+                rcvDirecciones.adapter = adapterD  // Asignamos el adaptador a la vista
+            }
+        }
+    }
+
+    // Esta función obtiene las direcciones desde la base de datos
+    private fun MisDirecciones(): List<tbDirecciones> {
+        val objConexionD = ClaseConexion().CadenaConexion()
+
+        // Verificamos si la conexión no es nula
+        val statementD = objConexionD?.createStatement()
+        val resultSetD = statementD?.executeQuery("SELECT * FROM tbdirecciones")
+
+        val listaDirecciones = mutableListOf<tbDirecciones>()
+
+        // Solo procedemos si resultSetD no es nulo
+        while (resultSetD?.next() == true) {
+            val uuidDirecciones = resultSetD.getString("uuidDirecciones")
+            val NombreDireccion = resultSetD.getString("NombreDireccion")
+            val Ubicacion = resultSetD.getString("Ubicacion")
+
+            val valoresJuntosD = tbDirecciones(uuidDirecciones, NombreDireccion, Ubicacion)
+            listaDirecciones.add(valoresJuntosD)
+        }
+
+        // Cerramos recursos
+        resultSetD?.close()
+        statementD?.close()
+        objConexionD?.close()
+
+        return listaDirecciones
+    }
+
 
     companion object {
         /**
