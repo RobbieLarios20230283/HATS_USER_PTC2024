@@ -4,9 +4,11 @@ package RecyclerViewHelpers
 import Modelo.ClaseConexion
 import Modelo.tbDirecciones
 import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import hats.hats_user_ptc2024.MisDirecciones
 import hats.hats_user_ptc2024.R
@@ -19,6 +21,7 @@ import kotlinx.coroutines.withContext
 
 class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerView.Adapter<ViewHolderDirecciones>() {
 
+    //Refrescar despues de editar (Pendiente)
     fun actualicePantalla(uuid: String, nuevoNombre: String, nuevaUbicacion: String) {
         val index = DatosDirecciones.indexOfFirst { it.uuidDirecciones == uuid }
         DatosDirecciones[index].NombreDireccion = nuevoNombre
@@ -26,7 +29,7 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
         notifyDataSetChanged()
     }
 
-
+    //Funcion funcionando correctamente (No tocar)
     fun eliminarDireccion(nombreDireccion: String, position: Int) {
         //NOTIFICAR AL ADAPTADOR DE DIRECCIONES
         val listDirecciones = DatosDirecciones.toMutableList()
@@ -56,19 +59,11 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
         notifyDataSetChanged()
     }
 
-
-
-    fun actualizarDirect(
-        NombreD: String,
-        DireccionD: String?,
-        uuidD: String,
-        scope: CoroutineScope
-    ) {
+    //Funcion funcionando correctamente (No tocar)
+    fun actualizarDirect(NombreD: String, DireccionD: String?, uuidD: String, scope: CoroutineScope) {
         scope.launch(Dispatchers.IO) {
-            // 1- Creo un obj de la clase conexion
             val objConexionD = ClaseConexion().CadenaConexion()
 
-            // 2- Creo una variable que contenga un PrepareStatement
             val ActuDireccion = objConexionD?.prepareStatement(
                 "UPDATE tbdirecciones SET " + "NombreDireccion = ?, Ubicacion = ? WHERE uuidDirecciones = ?")!!
             ActuDireccion?.apply {
@@ -79,7 +74,9 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
             }
             val commitD = objConexionD?.prepareStatement("commit")
             commitD?.executeUpdate()
+
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDirecciones {
@@ -94,10 +91,9 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
     override fun onBindViewHolder(holder: ViewHolderDirecciones, position: Int) {
         val itemD = DatosDirecciones[position]
 
-
         holder.txtTituloCardDirecciones.text = itemD.NombreDireccion
 
-
+        //No tocar (Funcionando)
         holder.imgBorrarD.setOnClickListener {
             val contextoD = holder.txtTituloCardDirecciones.context
 
@@ -120,6 +116,7 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
             builder.show()
         }
 
+        //No tocar (Funcionando)
         holder.imgEditarD.setOnClickListener {
             val context = holder.txtTituloCardDirecciones.context
             val dialogView = LayoutInflater.from(context).inflate(R.layout.activity_actualizar, null)
@@ -149,6 +146,15 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
 
         }
 
+        //No tocar (No funcionando)
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString("NombreDireccion", itemD.NombreDireccion)
+                putString("Ubicacion", itemD.Ubicacion)
+            }
+            val navController = findNavController(holder.itemView)
+            navController.navigate(R.id.detalles, bundle)
+        }
     }
 }
 
