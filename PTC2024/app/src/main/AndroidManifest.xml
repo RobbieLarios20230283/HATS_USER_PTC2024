@@ -24,9 +24,6 @@
             android:name=".actualizar"
             android:exported="false" />
         <activity
-            android:name=".itemCardDirecciones"
-            android:exported="false" />
-        <activity
             android:name=".PostLog"
             android:exported="false" />
         <activity

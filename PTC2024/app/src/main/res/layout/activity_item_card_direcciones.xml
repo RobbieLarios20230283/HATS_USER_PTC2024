@@ -34,14 +34,14 @@
             android:textSize="24sp" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/imgBorrarD"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/baseline_delete_24" />
 
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/imgActualizarD"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
