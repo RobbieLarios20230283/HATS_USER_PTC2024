@@ -10,6 +10,7 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import hats.hats_user_ptc2024.MisDirecciones
 import hats.hats_user_ptc2024.R
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -18,9 +19,10 @@ import kotlinx.coroutines.withContext
 
 class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerView.Adapter<ViewHolderDirecciones>() {
 
-    fun actualicePantalla(uuid: String, nuevoNombre: String) {
+    fun actualicePantalla(uuid: String, nuevoNombre: String, nuevaUbicacion: String) {
         val index = DatosDirecciones.indexOfFirst { it.uuidDirecciones == uuid }
         DatosDirecciones[index].NombreDireccion = nuevoNombre
+        DatosDirecciones[index].Ubicacion = nuevaUbicacion
         notifyDataSetChanged()
     }
 
@@ -54,26 +56,31 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
         notifyDataSetChanged()
     }
 
-    fun actualizarDireccion(nombreDireccion: String, uuidD: String){
 
-        GlobalScope.launch(Dispatchers.IO) {
 
+    fun actualizarDirect(
+        NombreD: String,
+        DireccionD: String?,
+        uuidD: String,
+        scope: CoroutineScope
+    ) {
+        scope.launch(Dispatchers.IO) {
+            // 1- Creo un obj de la clase conexion
             val objConexionD = ClaseConexion().CadenaConexion()
 
-            val actualizarMiDireccion = objConexionD?.prepareStatement("update tbdirecciones set NombreDireccion = ? where uuidDirecciones = ?")!!
-            actualizarMiDireccion.setString(1, nombreDireccion)
-            actualizarMiDireccion.setString(2, uuidD)
-            actualizarMiDireccion.executeUpdate()
-
-            val commitD = objConexionD.prepareStatement("commit")
-            commitD.executeUpdate()
-
-            withContext(Dispatchers.Main) {
-                actualicePantalla(uuidD, nombreDireccion)
+            // 2- Creo una variable que contenga un PrepareStatement
+            val ActuDireccion = objConexionD?.prepareStatement(
+                "UPDATE tbdirecciones SET " + "NombreDireccion = ?, Ubicacion = ? WHERE uuidDirecciones = ?")!!
+            ActuDireccion?.apply {
+                setString(1, NombreD)
+                setString(2, DireccionD)
+                setString(3, uuidD)
+                executeUpdate()
             }
+            val commitD = objConexionD?.prepareStatement("commit")
+            commitD?.executeUpdate()
         }
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderDirecciones {
         val vistaDirecciones = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_card_direcciones, parent, false)
@@ -114,23 +121,32 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
         }
 
         holder.imgEditarD.setOnClickListener {
-            val contextoD = holder.txtTituloCardDirecciones.context
+            val context = holder.txtTituloCardDirecciones.context
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.activity_actualizar, null)
+            val txtNombreDireccion_A = dialogView.findViewById<EditText>(R.id.txtNombreDireccion_A)
+            val txtDireccion_A = dialogView.findViewById<EditText>(R.id.txtDireccion_A)
 
-            val builder = AlertDialog.Builder(contextoD)
-            builder.setTitle("Actualizar")
-            builder.setMessage("¿Estás seguro de que deseas actualizar esta dirección?")
+            txtNombreDireccion_A.setText(itemD.NombreDireccion)
+            txtDireccion_A.setText(itemD.Ubicacion)
 
-            val cuadroDeActualizar = EditText(contextoD)
-            cuadroDeActualizar.setText(itemD.NombreDireccion)
-            builder.setView(cuadroDeActualizar)
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Actualizar este Paciente")
+            builder.setView(dialogView)
 
-            builder.setPositiveButton("Actualizar") {dialog, which ->
-                actualizarDireccion(cuadroDeActualizar.text.toString(),itemD.uuidDirecciones)
-            }
-            builder.setNegativeButton("Cancelar") {dialog, which ->
+            builder.setPositiveButton("Actualizar") { dialog, _ ->
+                val txtNombreDireccion_A = txtNombreDireccion_A.text.toString()
+                val txtDireccion_A = txtDireccion_A.text.toString()
+                actualizarDirect(txtNombreDireccion_A, txtDireccion_A, itemD.uuidDirecciones, GlobalScope)
                 dialog.dismiss()
             }
-            builder.show()
+
+            builder.setNegativeButton("Cancelar") { dialog, _ ->
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
+
         }
 
     }
