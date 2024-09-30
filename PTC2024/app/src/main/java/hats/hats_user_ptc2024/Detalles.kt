@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +23,7 @@ private const val ARG_PARAM2 = "param2"
 
 class Detalles : Fragment() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,6 +32,8 @@ class Detalles : Fragment() {
 
 
     companion object {
+        lateinit var direccionSeleccionada : String
+
         fun newInstance(
             NombreDireccion: String,
             Direccion: String
@@ -49,6 +53,7 @@ class Detalles : Fragment() {
     ): View {
         val root = inflater.inflate(R.layout.fragment_detalles, container, false)
 
+        val btnSeleccionarDireccion = root.findViewById<Button>(R.id.btnSeleccionarDireccion)
         val Ic_Regresar = root.findViewById<Button>(R.id.btnRegresarDETA)
 
         val NombreDireccion_O = arguments?.getString("NombreDireccion")
@@ -60,6 +65,14 @@ class Detalles : Fragment() {
 
         LBL_NombreDireccion.text = NombreDireccion_O
         LBL_Direccion.text = Direcciones_O
+
+        btnSeleccionarDireccion.setOnClickListener {
+            if (NombreDireccion_O != null) {
+                direccionSeleccionada = NombreDireccion_O
+                Toast.makeText(requireContext(), "esta es la DIRECCION QUE QUEDA $direccionSeleccionada", Toast.LENGTH_LONG).show()
+                println("esta es la DIRECCION $direccionSeleccionada")
+            }
+        }
 
 
         Ic_Regresar.setOnClickListener {

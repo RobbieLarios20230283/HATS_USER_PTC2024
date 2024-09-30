@@ -21,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
 class categorias : Fragment() {
 
     companion object VariableGlobal{
-        var miValor = ""
+        lateinit var miValor : String
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

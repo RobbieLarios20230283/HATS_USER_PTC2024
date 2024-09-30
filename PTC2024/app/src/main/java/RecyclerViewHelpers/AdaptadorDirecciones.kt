@@ -21,6 +21,7 @@ import kotlinx.coroutines.withContext
 
 class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerView.Adapter<ViewHolderDirecciones>() {
 
+
     //Refrescar despues de editar (No tocar)
     fun actualicePantalla(uuid: String, nuevoNombre: String, nuevaUbicacion: String) {
         val index = DatosDirecciones.indexOfFirst { it.uuidDirecciones == uuid }

@@ -53,9 +53,10 @@ class Servicios : Fragment() {
     }
 
     private fun MisServicios(): List<tbServicios> {
+        val servicioSeleccionado = categorias.miValor
         val objConexionS = ClaseConexion().CadenaConexion()
         val statementS = objConexionS?.createStatement()
-        val resultSetS = statementS?.executeQuery("SELECT * FROM tbservicios")
+        val resultSetS = statementS?.executeQuery("SELECT * FROM tbservicios where uuidCatalogo = $servicioSeleccionado")
 
         val listaServicios = mutableListOf<tbServicios>()
 

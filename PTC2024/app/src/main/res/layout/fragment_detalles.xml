@@ -85,4 +85,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.254" />
 
+    <Button
+        android:id="@+id/btnSeleccionarDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="73dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegresarDETA"
+        app:layout_constraintStart_toEndOf="@+id/btnRegresarDETA" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
