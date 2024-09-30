@@ -72,4 +72,9 @@
         android:name="hats.hats_user_ptc2024.Detalles"
         android:label="fragment_detalles"
         tools:layout="@layout/fragment_detalles" />
+    <fragment
+        android:id="@+id/detalleServicio"
+        android:name="hats.hats_user_ptc2024.DetalleServicio"
+        android:label="fragment_detalle_servicio"
+        tools:layout="@layout/fragment_detalle_servicio" />
 </navigation>

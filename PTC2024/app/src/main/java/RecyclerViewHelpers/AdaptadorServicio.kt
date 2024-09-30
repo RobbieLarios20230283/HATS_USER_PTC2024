@@ -1,8 +1,10 @@
 package RecyclerViewHelpers
 
 import Modelo.tbServicios
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import hats.hats_user_ptc2024.R
 
@@ -19,9 +21,15 @@ class AdaptadorServicio (var Datos: List<tbServicios>): RecyclerView.Adapter<Vie
         val item = Datos[position]
         holder.txtTituloCardServicio.text = item.NombreServicios
 
+        //No tocar (Funcionando(Mostrar Detalles))
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString("NombreServicios", item.NombreServicios)
+                putString("Descripcion", item.Descripcion)
+            }
+            val navController = findNavController(holder.itemView)
+            navController.navigate(R.id.detalleServicio, bundle)
+        }
+
     }
-
-
-
-
 }

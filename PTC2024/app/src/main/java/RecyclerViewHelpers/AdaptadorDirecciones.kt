@@ -21,7 +21,7 @@ import kotlinx.coroutines.withContext
 
 class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerView.Adapter<ViewHolderDirecciones>() {
 
-    //Refrescar despues de editar (Pendiente)
+    //Refrescar despues de editar (No tocar)
     fun actualicePantalla(uuid: String, nuevoNombre: String, nuevaUbicacion: String) {
         val index = DatosDirecciones.indexOfFirst { it.uuidDirecciones == uuid }
         DatosDirecciones[index].NombreDireccion = nuevoNombre
@@ -75,6 +75,10 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
             val commitD = objConexionD?.prepareStatement("commit")
             commitD?.executeUpdate()
 
+            withContext(Dispatchers.Main) {
+                actualicePantalla(uuidD, NombreD, DireccionD!!)
+            }
+
         }
 
     }
@@ -93,7 +97,7 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
 
         holder.txtTituloCardDirecciones.text = itemD.NombreDireccion
 
-        //No tocar (Funcionando)
+        //No tocar (Funcionando(Eliminar))
         holder.imgBorrarD.setOnClickListener {
             val contextoD = holder.txtTituloCardDirecciones.context
 
@@ -116,7 +120,7 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
             builder.show()
         }
 
-        //No tocar (Funcionando)
+        //No tocar (Funcionando(Editar))
         holder.imgEditarD.setOnClickListener {
             val context = holder.txtTituloCardDirecciones.context
             val dialogView = LayoutInflater.from(context).inflate(R.layout.activity_actualizar, null)
@@ -146,7 +150,7 @@ class AdaptadorDirecciones(var DatosDirecciones: List<tbDirecciones>): RecyclerV
 
         }
 
-        //No tocar (No funcionando)
+        //No tocar (Funcionando(Mostrar Detalles))
         holder.itemView.setOnClickListener {
             val bundle = Bundle().apply {
                 putString("NombreDireccion", itemD.NombreDireccion)

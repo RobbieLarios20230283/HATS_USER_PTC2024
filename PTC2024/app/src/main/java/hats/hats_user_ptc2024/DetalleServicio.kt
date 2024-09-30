@@ -20,7 +20,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 
-class Detalles : Fragment() {
+class DetalleServicio : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +31,13 @@ class Detalles : Fragment() {
 
     companion object {
         fun newInstance(
-            NombreDireccion: String,
-            Direccion: String
+            NombreServicios: String,
+            Descripcion: String
         ): Detalles {
             val fragment = Detalles()
             val args = Bundle()
-            args.putString("NombreDireccion", NombreDireccion)
-            args.putString("Ubicacion", Direccion)
+            args.putString("NombreServicios", NombreServicios)
+            args.putString("Descripcion", Descripcion)
             fragment.arguments = args
             return fragment
         }
@@ -47,23 +47,23 @@ class Detalles : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_detalles, container, false)
+        val root = inflater.inflate(R.layout.fragment_detalle_servicio, container, false)
 
-        val Ic_Regresar = root.findViewById<Button>(R.id.btnRegresarDETA)
+        val Ic_RegresarS = root.findViewById<Button>(R.id.btnRegresarRCV)
 
-        val NombreDireccion_O = arguments?.getString("NombreDireccion")
-        val Direcciones_O = arguments?.getString("Ubicacion")
-
-
-        val LBL_NombreDireccion = root.findViewById<TextView>(R.id.lblNombreD_D)
-        val LBL_Direccion = root.findViewById<TextView>(R.id.lblDireccion_D)
-
-        LBL_NombreDireccion.text = NombreDireccion_O
-        LBL_Direccion.text = Direcciones_O
+        val NombreServicios_O = arguments?.getString("NombreServicios")
+        val Descripcion_O = arguments?.getString("Descripcion")
 
 
-        Ic_Regresar.setOnClickListener {
-            findNavController().navigate(R.id.misDirecciones)
+        val LBL_NombreServicios = root.findViewById<TextView>(R.id.lblNombreD_S)
+        val LBL_Descripcion = root.findViewById<TextView>(R.id.lblDireccion_D_S)
+
+        LBL_NombreServicios.text = NombreServicios_O
+        LBL_Descripcion.text = Descripcion_O
+
+
+        Ic_RegresarS.setOnClickListener {
+            findNavController().navigate(R.id.servicios)
         }
 
         return root

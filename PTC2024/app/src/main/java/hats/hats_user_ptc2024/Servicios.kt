@@ -63,8 +63,8 @@ class Servicios : Fragment() {
             val uuidServicios = resultSetS.getString("uuidServicios")
             val uuidCatalogo = resultSetS.getString("uuidCatalogo")
             val nombreServicios = resultSetS.getString("NombreServicios")
-
-            val valoresJuntos = tbServicios(uuidServicios, uuidCatalogo, nombreServicios)
+            val descripcionServicios = resultSetS.getString("Descripcion")
+            val valoresJuntos = tbServicios(uuidServicios, uuidCatalogo, nombreServicios,descripcionServicios)
             listaServicios.add(valoresJuntos)
         }
 
