@@ -5,20 +5,14 @@ CREATE TABLE Catalogo (
     Nombre VARCHAR2(50) NOT NULL
 );
 
-INSERT INTO Catalogo (uuidCatalogo, Nombre)
-VALUES ('1', 'Carpinteria');
-
 create table tbservicios(
 uuidServicios VARCHAR2(36) PRIMARY KEY,
 uuidCatalogo varchar2(36) not null,
 NombreServicios VARCHAR2(50)not null,
+Descripcion VARCHAR2(200) not null,
 
 CONSTRAINT FK_IdCatalogo FOREIGN KEY (uuidCatalogo) REFERENCES Catalogo(uuidCatalogo)
 );
-
-INSERT INTO tbServicios (uuidServicios, uuidCatalogo, NombreServicios)
-VALUES ('2AQZ', '1', 'Servicio de Reparación');
-
 
 create table tbdirecciones(
 uuidDirecciones VARCHAR2(36) PRIMARY KEY,
@@ -43,18 +37,23 @@ CONSTRAINT FK_Direccion FOREIGN KEY (uuidDirecciones) REFERENCES tbdirecciones(u
 );
 
 CREATE TABLE Trabajador (
-    uuidTrabajador VARCHAR2(36) PRIMARY KEY,
-    nombreTrabajador VARCHAR2(50) NOT NULL,
-    Telefono NUMBER NOT NULL,
-    Correo VARCHAR2(50) NOT NULL,
-    Antecedentes BLOB,
-    uuidServicios VARCHAR2(36)NOT NULL,
-    DuiTrabajador VARCHAR2(10) NOT NULL,
-    Direccion VARCHAR2(100) NOT NULL,
-    FechaRegistro DATE NOT NULL,
-    
-     CONSTRAINT FK_Servicio FOREIGN KEY (uuidServicios) REFERENCES tbservicios(uuidServicios)
+uuidTrabajador VARCHAR2(36) PRIMARY KEY,
+nombre VARCHAR2(50),
+correo VARCHAR2(50),
+Contrasena VARCHAR2(100),
+direccion VARCHAR2(100)
 );
+ 
+ 
+CREATE TABLE TrabajadorInfo (
+uuidTrabajadorInfo VARCHAR2(36) PRIMARY KEY,
+telefono VARCHAR2(15),
+servicios VARCHAR2(36),
+nombrePerfil VARCHAR2(100),
+fechadeNacimiento VARCHAR2(100),
+duiTrabajadorUrl VARCHAR2(2048),
+fotoPerfilUrl VARCHAR2(2048)
+)
 
 CREATE TABLE Solicitudes (
     uuidSolicitud VARCHAR2(36) PRIMARY KEY,
