@@ -15,6 +15,11 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class activity_login : AppCompatActivity() {
+
+    companion object VariableGlobal{
+        lateinit var CorreoGlobal : String
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,6 +37,8 @@ class activity_login : AppCompatActivity() {
 
 
         btnIngresar.setOnClickListener {
+
+            CorreoGlobal = txtCorreoLogin.text.toString()
 
             val pantallaPrincipal = Intent(this, MainActivity::class.java)
             GlobalScope.launch(Dispatchers.IO) {

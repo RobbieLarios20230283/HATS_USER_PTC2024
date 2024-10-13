@@ -77,4 +77,14 @@
         android:name="hats.hats_user_ptc2024.DetalleServicio"
         android:label="fragment_detalle_servicio"
         tools:layout="@layout/fragment_detalle_servicio" />
+    <fragment
+        android:id="@+id/editarPerfil"
+        android:name="hats.hats_user_ptc2024.EditarPerfil"
+        android:label="fragment_editar_perfil"
+        tools:layout="@layout/fragment_editar_perfil" />
+    <fragment
+        android:id="@+id/miPerfil"
+        android:name="hats.hats_user_ptc2024.miPerfil"
+        android:label="fragment_mi_perfil"
+        tools:layout="@layout/fragment_mi_perfil" />
 </navigation>

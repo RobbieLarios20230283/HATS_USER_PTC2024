@@ -76,7 +76,7 @@ class Detalles : Fragment() {
 
 
         Ic_Regresar.setOnClickListener {
-            findNavController().navigate(R.id.misDirecciones)
+            findNavController().popBackStack()
         }
 
         return root

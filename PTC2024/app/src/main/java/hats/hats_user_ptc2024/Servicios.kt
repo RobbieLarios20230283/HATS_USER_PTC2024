@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -39,6 +41,13 @@ class Servicios : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val btnCerrarSVR: Button = view.findViewById(R.id.btnCerrarSVR)
+
+        btnCerrarSVR.setOnClickListener {
+            // Cierra el fragmento actual y vuelve al fragmento anterior
+            findNavController().popBackStack()
+        }
 
         val rcvServicios: RecyclerView = view.findViewById(R.id.rcvMisServicios)
         rcvServicios.layoutManager = LinearLayoutManager(requireContext())

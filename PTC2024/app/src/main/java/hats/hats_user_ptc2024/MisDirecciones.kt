@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -49,6 +51,14 @@ class MisDirecciones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val btnCerrarDRCV: Button = view.findViewById(R.id.btnVolverDirecciones)
+
+        btnCerrarDRCV.setOnClickListener {
+            // Cierra el fragmento actual y vuelve al fragmento anterior
+            findNavController().popBackStack()
+        }
 
         val rcvDirecciones: RecyclerView = view.findViewById(R.id.rcvDireccionesC)
         rcvDirecciones.layoutManager = LinearLayoutManager(requireContext())

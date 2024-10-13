@@ -63,7 +63,7 @@ class DetalleServicio : Fragment() {
 
 
         Ic_RegresarS.setOnClickListener {
-            findNavController().navigate(R.id.servicios)
+            findNavController().popBackStack()
         }
 
         return root

@@ -36,7 +36,7 @@ class PostLog : AppCompatActivity() {
         val duiEmpleador = findViewById<EditText>(R.id.txtDui_p)
         val direccion = findViewById<EditText>(R.id.txtDireccionP)
         val fechanac = findViewById<EditText>(R.id.txtfecha_p)
-        val btnGuardar = findViewById<Button>(R.id.btnActualizar)
+        val btnGuardar = findViewById<Button>(R.id.btnActualizarEP)
         val btnVolver = findViewById<ImageView>(R.id.backlogin)
 
         // Inicializar el botón de "Volver" como deshabilitado

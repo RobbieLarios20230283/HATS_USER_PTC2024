@@ -34,6 +34,12 @@ class Direcciones : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val btnCerrarADN: Button = view.findViewById(R.id.btnCerrarADN)
+
+        btnCerrarADN.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         val btnMisDireccionesNav: Button = view.findViewById(R.id.btnVerMisDirecciones)
         val txtNombreDireccion: EditText = view.findViewById(R.id.txtNombreDireccion)
         val txtDireccion: EditText = view.findViewById(R.id.txtMiDirrecion)
