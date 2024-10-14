@@ -11,13 +11,65 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D4F4EB">
+        android:background="#E5F2EC">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/top_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="373dp"
+            android:layout_height="610dp"
+            android:src="@drawable/edittextfondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.598" />
+
+        <TextView
+            android:id="@+id/textView6ww"
+            android:layout_width="375dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/postlog"
+            android:textAlignment="textStart"
+            android:textColor="#25523D"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Categorias"
+            android:textColor="#669469"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6ww"
+            app:layout_constraintEnd_toEndOf="@+id/textView6ww"
+            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintStart_toStartOf="@+id/textView6ww"
+            app:layout_constraintTop_toTopOf="@+id/textView6ww" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1200dp"
+            android:layout_marginTop="800dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,182 +78,168 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnCarpinteria"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Carpinteria"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.891"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.177" />
-
-        <Button
-            android:id="@+id/btnMecanica"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Mecanica"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
-
-        <Button
-            android:id="@+id/btnCerrajeria"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Cerrajeria"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.324" />
-
-        <Button
-            android:id="@+id/btnLimpieza"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Limpieza"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.489" />
-
-        <Button
-            android:id="@+id/btnPlanchado"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Planchado"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.489" />
-
-        <Button
-            android:id="@+id/btnFontaneria"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Fontaneria"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.659" />
-
-        <Button
-            android:id="@+id/btnCocina"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Cocina"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.891"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.659" />
-
-        <Button
-            android:id="@+id/btnJardineria"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Jardineria"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.899"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.831" />
-
-        <Button
-            android:id="@+id/btnElectroRep"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Reparacion de Electrodomesticos"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.14"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.831" />
-
-        <Button
-            android:id="@+id/btnPintura"
-            android:layout_width="162dp"
-            android:layout_height="85dp"
-            android:backgroundTint="#507365"
-            android:text="Pintura"
-            app:cornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.177" />
-
-        <View
-            android:id="@+id/View2"
-            android:layout_width="410dp"
-            android:layout_height="70dp"
-
-            android:background="@drawable/imagen2"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/imageView12qq"
+            android:layout_width="130dp"
+            android:layout_height="125dp"
+            android:src="@drawable/hats_logo_1_"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6ww"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categorías"
-            android:textSize="30sp"
+
+        <Button
+            android:id="@+id/btnFontaneria"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Fontaneria"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.108"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintVertical_bias="0.67" />
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="69dp"
-            android:layout_height="61dp"
-            android:layout_marginBottom="756dp"
-            android:src="@drawable/hats_logo_1_"
+        <Button
+            android:id="@+id/btnLimpieza"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Limpieza"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintHorizontal_bias="0.096"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.013" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.502" />
+
+        <Button
+            android:id="@+id/btnMecanica"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Mecanica"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.346" />
+
+        <Button
+            android:id="@+id/btnPintura"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Pintura"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.193" />
+
+        <Button
+            android:id="@+id/btnCarpinteria"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Carpinteria"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toEndOf="@+id/btnPintura"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.193" />
+
+        <Button
+            android:id="@+id/btnJardineria"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Jardineria"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toEndOf="@+id/btnElectroRep"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.848" />
+
+        <Button
+            android:id="@+id/btnCocina"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Cocina"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toEndOf="@+id/btnFontaneria"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.671" />
+
+        <Button
+            android:id="@+id/btnPlanchado"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Planchado"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toEndOf="@+id/btnLimpieza"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.504" />
+
+        <Button
+            android:id="@+id/btnCerrajeria"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Cerrajeria"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toEndOf="@+id/btnMecanica"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.347" />
+
+        <Button
+            android:id="@+id/btnElectroRep"
+            android:layout_width="162dp"
+            android:layout_height="85dp"
+            android:backgroundTint="#3D8A56"
+            android:text="Reparacion de Electrodomesticos"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.847" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

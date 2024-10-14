@@ -12,6 +12,9 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import hats.hats_user_ptc2024.activity_login.VariableGlobal.CorreoGlobal
 import hats.hats_user_ptc2024.categorias.VariableGlobal.miValor
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class miPerfil : Fragment() {
     override fun onCreateView(
@@ -66,15 +69,10 @@ class miPerfil : Fragment() {
 
             val lblFecha: TextView = root.findViewById(R.id.lblFechaMP)
             lblFecha.text = perfil.fechanac
-            
+
             val lblDui: TextView = root.findViewById(R.id.lblDuiMP)
             lblDui.text = perfil.dui
-
-
         }
-
-
-
         return root
     }
 
@@ -87,7 +85,4 @@ class miPerfil : Fragment() {
             findNavController().navigate(R.id.editarPerfil)
         }
     }
-
-
-
 }

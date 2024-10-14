@@ -36,7 +36,7 @@ class configuracion : Fragment() {
         val btnCerrarCesión: Button = view.findViewById(R.id.btnCerrarCesión)
 
         btnPerfilC.setOnClickListener {
-            findNavController().navigate(R.id.perfil)
+            findNavController().navigate(R.id.miPerfil)
         }
         btnDirreccion.setOnClickListener {
             findNavController().navigate(R.id.direcciones)
