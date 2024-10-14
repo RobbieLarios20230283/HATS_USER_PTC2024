@@ -48,9 +48,10 @@ class miPerfil : Fragment() {
         }
 
         val perfilList = MiPerfil()
-
         if (perfilList.isNotEmpty()) {
+
             val perfil = perfilList[0]
+
             val lblNombre: TextView = root.findViewById(R.id.lblNombreMP)
             lblNombre.text = perfil.nombreEmpleador
 
@@ -65,10 +66,14 @@ class miPerfil : Fragment() {
 
             val lblFecha: TextView = root.findViewById(R.id.lblFechaMP)
             lblFecha.text = perfil.fechanac
-
+            
             val lblDui: TextView = root.findViewById(R.id.lblDuiMP)
             lblDui.text = perfil.dui
+
+
         }
+
+
 
         return root
     }
@@ -82,5 +87,7 @@ class miPerfil : Fragment() {
             findNavController().navigate(R.id.editarPerfil)
         }
     }
+
+
 
 }
