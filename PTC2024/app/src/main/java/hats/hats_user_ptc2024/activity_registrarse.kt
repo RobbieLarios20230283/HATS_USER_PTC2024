@@ -16,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.security.MessageDigest
 import java.util.UUID
 
 class activity_registrarse : AppCompatActivity() {
@@ -39,38 +40,88 @@ class activity_registrarse : AppCompatActivity() {
         val btnCrearCuenta = findViewById<Button>(R.id.btnregistrarse)
         val btnRegresarLogin = findViewById<Button>(R.id.btnvolverlog)
 
+        // Función para encriptar la contraseña
+        fun hashSHA256(contraseniaEncriptada: String): String {
+            val bytes = MessageDigest.getInstance("SHA-256").digest(contraseniaEncriptada.toByteArray())
+            return bytes.joinToString("") { String.format("%02x", it) }
+        }
+
         // Botón para crear la cuenta
         btnCrearCuenta.setOnClickListener {
-            GlobalScope.launch(Dispatchers.IO) {
-                val objConexion = ClaseConexion().CadenaConexion()
+            val correo = txtCorreoRegistro.text.toString()
+            val contrasena = txtPasswordRegistro.text.toString()
+            val confirmarContrasena = txtConfirmarPassword.text.toString()
+            var validacionCam = false
 
-                // Generar un UUID para el nuevo empleador
-                val uuidEmpleador = UUID.randomUUID().toString()
+            if (correo.isEmpty()) {
+                txtCorreoRegistro.error = "El correo es obligatorio"
+                validacionCam = true
+            } else {
+                txtCorreoRegistro.error = null
+            }
+            if (contrasena.isEmpty()) {
+                txtPasswordRegistro.error = "La contraseña es obligatoria"
+                validacionCam = true
+            } else {
+                txtPasswordRegistro.error = null
+            }
+            if (confirmarContrasena.isEmpty()) {
+                txtConfirmarPassword.error = "La confirmación de la contraseña es obligatoria"
+                validacionCam = true
+            } else {
+                txtConfirmarPassword.error = null
+            }
+            if (!correo.matches(Regex("[a-zA-Z0-9._-]+@[a-z]+[.][a-z]+"))) {
+                txtCorreoRegistro.error = "El correo no tiene un formato válido"
+                validacionCam = true
+            } else {
+                txtCorreoRegistro.error = null
+            }
+            if (contrasena.length <= 7) {
+                txtPasswordRegistro.error = "La contraseña debe ser mayor a 7 dígitos"
+                validacionCam = true
+            } else {
+                txtPasswordRegistro.error = null
+            }
+            if (contrasena != confirmarContrasena) {
+                txtConfirmarPassword.error = "Las contraseñas no coinciden"
+                validacionCam = true
+            } else {
+                txtConfirmarPassword.error = null
+            }
 
-                // Insertar datos en la base de datos
-                val crearUsuario = objConexion?.prepareStatement(
-                    "INSERT INTO Empleador(uuidEmpleador, CorreoUS, ContrasenaUS) VALUES (?, ?, ?)"
-                )!!
-                crearUsuario.setString(1, uuidEmpleador)
-                crearUsuario.setString(2, txtCorreoRegistro.text.toString())
-                crearUsuario.setString(3, txtPasswordRegistro.text.toString())
-                crearUsuario.executeUpdate()
+            if (!validacionCam) {
+                GlobalScope.launch(Dispatchers.IO) {
+                    val objConexion = ClaseConexion().CadenaConexion()
 
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@activity_registrarse, "Usuario creado", Toast.LENGTH_SHORT).show()
+                    // Generar un UUID para el nuevo empleador
+                    val uuidEmpleador = UUID.randomUUID().toString()
 
-                    // Iniciar la actividad PostLog y pasar el UUID
-                    val intent = Intent(this@activity_registrarse, PostLog::class.java)
-                    intent.putExtra("uuidEmpleador", uuidEmpleador)
-                    startActivity(intent)
+                    // Insertar datos en la base de datos
+                    val crearUsuario = objConexion?.prepareStatement(
+                        "INSERT INTO Empleador(uuidEmpleador, CorreoUS, ContrasenaUS) VALUES (?, ?, ?)"
+                    )!!
+                    crearUsuario.setString(1, uuidEmpleador)
+                    crearUsuario.setString(2, correo)
+                    crearUsuario.setString(3, hashSHA256(contrasena))  // Encriptación de la contraseña
+                    crearUsuario.executeUpdate()
 
-                    // Limpiar campos
-                    txtCorreoRegistro.setText("")
-                    txtPasswordRegistro.setText("")
-                    txtConfirmarPassword.setText("")
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@activity_registrarse, "Usuario creado", Toast.LENGTH_SHORT).show()
 
-                    // Finalizar la actividad de registro
-                    finish()
+                        // Iniciar la actividad PostLog y pasar el UUID
+                        val intent = Intent(this@activity_registrarse, PostLog::class.java)
+                        intent.putExtra("uuidEmpleador", uuidEmpleador)
+                        startActivity(intent)
+
+                        // Limpiar campos
+                        txtCorreoRegistro.setText("")
+                        txtPasswordRegistro.setText("")
+                        txtConfirmarPassword.setText("")
+
+                        // Finalizar la actividad de registro
+                        finish()
+                    }
                 }
             }
         }

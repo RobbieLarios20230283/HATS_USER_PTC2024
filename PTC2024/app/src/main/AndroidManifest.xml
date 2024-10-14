@@ -16,45 +16,61 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".recuperarcontracorreo"
+            android:exported="false" />
+
+        <activity
             android:name=".item_card_Direcciones"
             android:exported="false" />
+
         <activity
             android:name=".item_card_servicios"
             android:exported="false" />
+
         <activity
             android:name=".actualizar"
             android:exported="false" />
+
         <activity
             android:name=".PostLog"
             android:exported="false" />
+
         <activity
             android:name=".Ajustes"
             android:exported="false" />
+
         <activity
             android:name=".activity_registrarse"
             android:exported="false" />
+
         <activity
             android:name=".activity_recoverpass"
             android:exported="false" />
+
         <activity
             android:name=".activity_login"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
-
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/app_name">
+            android:label="@string/app_name" />
 
-        </activity>
+        <activity
+            android:name=".recuperarCOntraNuevaContra"
+            android:exported="false" />
+
+        <!-- Agrega la declaración de la nueva actividad aquí -->
+        <activity
+            android:name=".recuperarContraCodigo"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

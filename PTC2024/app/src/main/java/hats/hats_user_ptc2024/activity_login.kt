@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.security.MessageDigest
 
 class activity_login : AppCompatActivity() {
 
@@ -30,8 +31,14 @@ class activity_login : AppCompatActivity() {
             insets
         }
 
+        fun hashSHA256(input: String): String {
+            val bytes = MessageDigest.getInstance("SHA-256").digest(input.toByteArray())
+            return bytes.joinToString("") { "%02x".format(it) }
+        }
+
         val txtCorreoLogin = findViewById<EditText>(R.id.txtcorreo)
-        val  txtPasswordLogin = findViewById<EditText>(R.id.txtcontraseña)
+        val txtPasswordLogin = findViewById<EditText>(R.id.txtcontraseña)
+        val txtRecuperarContrasena = findViewById<TextView>(R.id.txtrecupcontra)
         val btnIngresar = findViewById<Button>(R.id.btniniciar)
         val btnRegistrarme = findViewById<TextView>(R.id.txtregistrarse)
 
@@ -45,7 +52,8 @@ class activity_login : AppCompatActivity() {
                 val objConexion = ClaseConexion().CadenaConexion()
                 val comprobarUsuario = objConexion?.prepareStatement("SELECT * FROM Empleador WHERE CorreoUS = ? AND ContrasenaUS = ?")!!
                 comprobarUsuario.setString(1, txtCorreoLogin.text.toString())
-                comprobarUsuario.setString(2, txtPasswordLogin.text.toString())
+                comprobarUsuario.setString(2, hashSHA256(txtPasswordLogin.text.toString()))
+                println(hashSHA256(txtPasswordLogin.text.toString()))
                 val resultado = comprobarUsuario.executeQuery()
                 if (resultado.next()) {
                     startActivity(pantallaPrincipal)
@@ -61,5 +69,10 @@ class activity_login : AppCompatActivity() {
             startActivity(pantallaRegistrarme)
         }
 
+        txtRecuperarContrasena.setOnClickListener {
+            //Cambio de pantalla
+            val pantallaRecuperarContra = Intent(this, recuperarcontracorreo::class.java)
+            startActivity(pantallaRecuperarContra)
+        }
     }
 }
