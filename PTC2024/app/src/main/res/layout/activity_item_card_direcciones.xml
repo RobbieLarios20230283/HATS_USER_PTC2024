@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
 
-    app:cardBackgroundColor="#316655"
+    app:cardBackgroundColor="#FFFFFF"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
@@ -30,8 +30,11 @@
             android:layout_width="230dp"
             android:layout_height="match_parent"
             android:text="Text"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textAlignment="textStart"
+            android:textColor="#58996F"
+            android:textColorHint="#A4DEB1"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imgBorrarD"

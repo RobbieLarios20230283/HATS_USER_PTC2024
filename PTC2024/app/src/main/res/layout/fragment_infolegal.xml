@@ -14,13 +14,22 @@
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="114dp">
 
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/top_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="700dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="20dp"
             android:text="TextView"
@@ -32,72 +41,121 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-
-        <TextView
-            android:id="@+id/textView3"
-
-
+        <ImageView
+            android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Información legal"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/top_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.057" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="176dp"
-            android:layout_height="36dp"
-            android:text="Conoce los terminos de servicio"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/textView6"
+            android:layout_width="375dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/postlog"
+            android:textAlignment="textStart"
+            android:textColor="#25523D"
+            android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="130dp"
+            android:layout_height="125dp"
+            android:src="@drawable/hats_logo_1_"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.188" />
+            app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/textView13d6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="237dp"
-            android:layout_height="63dp"
-            android:text="Terminos y condiciones generales"
+            android:text="InfoLegal"
+            android:textColor="#669469"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.575"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.543" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="112dp"
+            android:layout_height="110dp"
+            android:src="@drawable/baseline_headset_mic_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.413"
+            app:layout_constraintHorizontal_bias="0.474"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.628" />
+            app:layout_constraintVertical_bias="0.198" />
+
 
         <Button
             android:id="@+id/button3"
             android:layout_width="237dp"
             android:layout_height="63dp"
+            android:backgroundTint="#497E52"
             android:text="Politicas de seguridad"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.413"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.966" />
+            app:layout_constraintVertical_bias="0.697" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="237dp"
+            android:layout_height="63dp"
+            android:backgroundTint="#497E52"
+            android:text="Terminos y condiciones generales"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.429" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="237dp"
             android:layout_height="63dp"
+            android:backgroundTint="#497E52"
             android:text="Terminos y condiciones de pago"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.413"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.786" />
+            app:layout_constraintVertical_bias="0.556" />
+
+        <Button
+            android:id="@+id/btnVolverifno"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#497E52"
+            android:text="Volver"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.858" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

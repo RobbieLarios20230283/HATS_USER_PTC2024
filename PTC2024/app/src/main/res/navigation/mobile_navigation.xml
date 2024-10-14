@@ -38,11 +38,6 @@
         android:label="fragment_asistencia"
         tools:layout="@layout/fragment_asistencia" />
     <fragment
-        android:id="@+id/perfil"
-        android:name="hats.hats_user_ptc2024.Perfil"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
         android:id="@+id/categorias"
         android:name="hats.hats_user_ptc2024.categorias"
         android:label="fragment_categorias"

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EFFFF2"
+        android:background="#D4F4EB"
         tools:layout_editor_absoluteX="-100dp"
         tools:layout_editor_absoluteY="75dp">
 
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/top_background"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,29 +74,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Notificaciones"
+            android:text="Notificación"
             android:textColor="#669469"
             android:textSize="34sp"
             android:textStyle="bold"
             app:cornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="@+id/textView6"
-            app:layout_constraintHorizontal_bias="0.792"
+            app:layout_constraintHorizontal_bias="0.748"
             app:layout_constraintStart_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toTopOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.456" />
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="112dp"
-            android:layout_height="110dp"
+            android:layout_width="136dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="136dp"
             android:src="@drawable/baseline_notifications_24"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.474"
+            app:layout_constraintHorizontal_bias="0.472"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.198" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

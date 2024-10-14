@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +28,19 @@ class Asistencia : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Encuentra el botón después de que la vista se haya creado
+        val btnCerrarADNss: Button = view.findViewById(R.id.btnVolverkyml)
+
+        // Configurar el listener para el botón
+        btnCerrarADNss.setOnClickListener {
+            // Navegar hacia atrás en la pila de navegación
+            findNavController().popBackStack()
         }
     }
 
