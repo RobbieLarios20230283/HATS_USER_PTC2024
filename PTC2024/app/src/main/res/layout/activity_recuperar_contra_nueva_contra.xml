@@ -134,12 +134,23 @@
         android:id="@+id/imageView23"
         android:layout_width="165dp"
         android:layout_height="116dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.72"
         app:srcCompat="@drawable/password" />
+
+    <ImageView
+        android:id="@+id/imgNublartxt"
+        android:layout_width="41dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNuevaContra"
+        app:layout_constraintEnd_toEndOf="@+id/txtNuevaContra"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="@+id/txtNuevaContra"
+        app:layout_constraintTop_toTopOf="@+id/txtNuevaContra"
+        app:srcCompat="@drawable/vercontrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="actualizar Nombre"
+        android:textColorHint="#95B697"
+        android:textStyle="bold"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -20,6 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="actualizar Direcciones"
+        android:textColorHint="#95B697"
+        android:textStyle="bold"
         tools:ignore="TouchTargetSizeCheck" />
 
 </LinearLayout>
