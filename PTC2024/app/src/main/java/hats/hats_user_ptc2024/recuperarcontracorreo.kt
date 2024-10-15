@@ -28,6 +28,11 @@ class recuperarcontracorreo : AppCompatActivity() {
         }
         val txtCorreo=findViewById<EditText>(R.id.txtNuevaContra)
         val btnContinuar=findViewById<Button>(R.id.btnContinuar)
+        val btnVolver=findViewById<Button>(R.id.btnadkoko)
+
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
         btnContinuar.setOnClickListener{
 

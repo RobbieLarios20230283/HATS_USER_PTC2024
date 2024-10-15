@@ -10,6 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 class recuperarContraCodigo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +24,16 @@ class recuperarContraCodigo : AppCompatActivity() {
             insets
         }
 
+        val btnVolver = findViewById<Button>(R.id.btnVolverrpcc)
         val txtNum1 = findViewById<EditText>(R.id.txtPrimerNum)
         val txtNum2 = findViewById<EditText>(R.id.txtSegundoNum)
         val txtNum3 = findViewById<EditText>(R.id.txtTercerNum)
         val txtNum4 = findViewById<EditText>(R.id.txtCuartoNum)
         val btnContinuar = findViewById<Button>(R.id.btnContinuar)
+
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
         txtNum1.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (event.action == KeyEvent.ACTION_UP) {
