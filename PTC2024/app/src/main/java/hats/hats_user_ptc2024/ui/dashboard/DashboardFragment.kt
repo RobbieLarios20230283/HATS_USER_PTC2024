@@ -40,24 +40,7 @@ class DashboardFragment : Fragment() {
         return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val btnPerfil: Button = view.findViewById(R.id.btnNPerfil)
-        val btnDirecciones: Button = view.findViewById(R.id.btnNPerfil)
-        val btnConf: Button = view.findViewById(R.id.btnNConfiguraciones)
-
-        btnPerfil.setOnClickListener {
-            findNavController().navigate(R.id.miPerfil)
-        }
-
-        btnDirecciones.setOnClickListener {
-            findNavController().navigate(R.id.direcciones)
-        }
-        btnConf.setOnClickListener {
-            findNavController().navigate(R.id.configuracion)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

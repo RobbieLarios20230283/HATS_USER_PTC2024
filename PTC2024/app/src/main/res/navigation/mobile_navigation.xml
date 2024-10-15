@@ -82,4 +82,34 @@
         android:name="hats.hats_user_ptc2024.miPerfil"
         android:label="fragment_mi_perfil"
         tools:layout="@layout/fragment_mi_perfil" />
+    <fragment
+        android:id="@+id/TCN_F"
+        android:name="hats.hats_user_ptc2024.TCN_F"
+        android:label="fragment_t_c_n_"
+        tools:layout="@layout/fragment_t_c_n_" />
+    <fragment
+        android:id="@+id/TCP_f"
+        android:name="hats.hats_user_ptc2024.TCP_f"
+        android:label="fragment_t_c_p_f"
+        tools:layout="@layout/fragment_t_c_p_f" />
+    <fragment
+        android:id="@+id/PLYS_f"
+        android:name="hats.hats_user_ptc2024.PLYS_f"
+        android:label="fragment_p_l_y_s_f"
+        tools:layout="@layout/fragment_p_l_y_s_f" />
+    <fragment
+        android:id="@+id/CNTRASESOR"
+        android:name="hats.hats_user_ptc2024.CNTRASESOR"
+        android:label="fragment_c_n_t_r_a_s_e_s_o_r"
+        tools:layout="@layout/fragment_c_n_t_r_a_s_e_s_o_r" />
+    <fragment
+        android:id="@+id/METODOS_P"
+        android:name="hats.hats_user_ptc2024.METODOS_P"
+        android:label="fragment_m_e_t_o_d_o_s__p"
+        tools:layout="@layout/fragment_m_e_t_o_d_o_s__p" />
+    <fragment
+        android:id="@+id/MAS_INFO"
+        android:name="hats.hats_user_ptc2024.MAS_INFO"
+        android:label="fragment_m_a_s__i_n_f_o"
+        tools:layout="@layout/fragment_m_a_s__i_n_f_o" />
 </navigation>

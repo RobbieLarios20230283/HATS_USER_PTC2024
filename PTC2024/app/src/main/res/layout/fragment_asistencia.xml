@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D4F4EB"
+        android:background="#FFFFFF"
         tools:layout_editor_absoluteX="-100dp"
         tools:layout_editor_absoluteY="75dp">
 
@@ -109,6 +109,34 @@
 
 
         <Button
+            android:id="@+id/btnContactar"
+            android:layout_width="336dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#3E7E5D"
+
+            android:text="Contactar un asesor"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.455" />
+
+        <Button
+            android:id="@+id/btnVolverkyml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3E7E5D"
+            android:text="Volver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMasInfo"
+            app:layout_constraintVertical_bias="0.379" />
+
+        <Button
             android:id="@+id/btnMasInfo"
             android:layout_width="336dp"
             android:layout_height="70dp"
@@ -121,39 +149,7 @@
             app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.789" />
-
-        <Button
-            android:id="@+id/btnPreguntas"
-            android:layout_width="336dp"
-            android:layout_height="70dp"
-            android:backgroundTint="#3E7E5D"
-
-            android:text="Preguntas Frecuentes"
-            android:textStyle="bold"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.52"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.38" />
-
-        <Button
-            android:id="@+id/btnContactar"
-            android:layout_width="336dp"
-            android:layout_height="70dp"
-            android:backgroundTint="#3E7E5D"
-
-            android:text="Contactar un asesor"
-            android:textStyle="bold"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.52"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.516" />
+            app:layout_constraintVertical_bias="0.743" />
 
         <Button
             android:id="@+id/btnPago"
@@ -169,7 +165,7 @@
             app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            app:layout_constraintVertical_bias="0.601" />
 
         <TextView
             android:id="@+id/textView"
@@ -187,17 +183,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/btnVolverkyml"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#3E7E5D"
-            android:text="Volver"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnMasInfo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
