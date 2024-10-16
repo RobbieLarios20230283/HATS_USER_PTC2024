@@ -112,4 +112,9 @@
         android:name="hats.hats_user_ptc2024.MAS_INFO"
         android:label="fragment_m_a_s__i_n_f_o"
         tools:layout="@layout/fragment_m_a_s__i_n_f_o" />
+    <activity
+        android:id="@+id/chat"
+        android:name="hats.hats_user_ptc2024.chat"
+        android:label="activity_chat"
+        tools:layout="@layout/activity_chat" />
 </navigation>
