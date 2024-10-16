@@ -28,6 +28,13 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/icoinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/baseline_info_24" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
