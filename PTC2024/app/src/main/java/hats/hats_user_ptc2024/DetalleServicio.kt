@@ -32,12 +32,14 @@ class DetalleServicio : Fragment() {
     companion object {
         fun newInstance(
             NombreServicios: String,
-            Descripcion: String
+            Descripcion: String,
+            correoEmp: String
         ): Detalles {
             val fragment = Detalles()
             val args = Bundle()
             args.putString("NombreServicios", NombreServicios)
             args.putString("Descripcion", Descripcion)
+            args.putString("correoEmp", correoEmp)
             fragment.arguments = args
             return fragment
         }
@@ -53,13 +55,16 @@ class DetalleServicio : Fragment() {
 
         val NombreServicios_O = arguments?.getString("NombreServicios")
         val Descripcion_O = arguments?.getString("Descripcion")
+        val correoEmp_O = arguments?.getString("correoEmp")
 
 
         val LBL_NombreServicios = root.findViewById<TextView>(R.id.lblNombreD_S)
         val LBL_Descripcion = root.findViewById<TextView>(R.id.lblDireccion_D_S)
+        val LBL_correoEmp = root.findViewById<TextView>(R.id.lblcorreoEmpD_S)
 
         LBL_NombreServicios.text = NombreServicios_O
         LBL_Descripcion.text = Descripcion_O
+        LBL_correoEmp.text = correoEmp_O
 
 
         Ic_RegresarS.setOnClickListener {
