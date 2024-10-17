@@ -108,7 +108,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnTTT3"
             android:layout_width="237dp"
             android:layout_height="63dp"
             android:backgroundTint="#497E52"
@@ -120,7 +120,7 @@
             app:layout_constraintVertical_bias="0.697" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnTTT1"
             android:layout_width="237dp"
             android:layout_height="63dp"
             android:backgroundTint="#497E52"
@@ -132,7 +132,7 @@
             app:layout_constraintVertical_bias="0.429" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnTTT2"
             android:layout_width="237dp"
             android:layout_height="63dp"
             android:backgroundTint="#497E52"

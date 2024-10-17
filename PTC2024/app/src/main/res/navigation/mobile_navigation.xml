@@ -33,11 +33,6 @@
         android:label="fragment_infolegal"
         tools:layout="@layout/fragment_infolegal" />
     <fragment
-        android:id="@+id/asistencia"
-        android:name="hats.hats_user_ptc2024.Asistencia"
-        android:label="fragment_asistencia"
-        tools:layout="@layout/fragment_asistencia" />
-    <fragment
         android:id="@+id/categorias"
         android:name="hats.hats_user_ptc2024.categorias"
         android:label="fragment_categorias"
@@ -97,21 +92,6 @@
         android:name="hats.hats_user_ptc2024.PLYS_f"
         android:label="fragment_p_l_y_s_f"
         tools:layout="@layout/fragment_p_l_y_s_f" />
-    <fragment
-        android:id="@+id/CNTRASESOR"
-        android:name="hats.hats_user_ptc2024.CNTRASESOR"
-        android:label="fragment_c_n_t_r_a_s_e_s_o_r"
-        tools:layout="@layout/fragment_c_n_t_r_a_s_e_s_o_r" />
-    <fragment
-        android:id="@+id/METODOS_P"
-        android:name="hats.hats_user_ptc2024.METODOS_P"
-        android:label="fragment_m_e_t_o_d_o_s__p"
-        tools:layout="@layout/fragment_m_e_t_o_d_o_s__p" />
-    <fragment
-        android:id="@+id/MAS_INFO"
-        android:name="hats.hats_user_ptc2024.MAS_INFO"
-        android:label="fragment_m_a_s__i_n_f_o"
-        tools:layout="@layout/fragment_m_a_s__i_n_f_o" />
     <activity
         android:id="@+id/chat"
         android:name="hats.hats_user_ptc2024.chat"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import hats.hats_user_ptc2024.categorias.VariableGlobal.miValor
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -42,6 +43,20 @@ class infolegal : Fragment() {
         btnCerrarADNaa.setOnClickListener {
             // Navegar hacia atrás en la pila de navegación
             findNavController().popBackStack()
+        }
+
+        val btn1: Button = view.findViewById(R.id.btnTTT1)
+        val btn2: Button = view.findViewById(R.id.btnTTT2)
+        val btn3: Button = view.findViewById(R.id.btnTTT3)
+
+        btn1.setOnClickListener {
+            findNavController().navigate(R.id.TCN_F)
+        }
+        btn2.setOnClickListener {
+            findNavController().navigate(R.id.TCP_f)
+        }
+        btn3.setOnClickListener {
+            findNavController().navigate(R.id.PLYS_f)
         }
     }
 
