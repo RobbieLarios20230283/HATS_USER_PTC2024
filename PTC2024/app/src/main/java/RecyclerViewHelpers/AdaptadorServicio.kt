@@ -26,6 +26,7 @@ class AdaptadorServicio(var Datos: List<tbServicios>) : RecyclerView.Adapter<Vie
             val bundle = Bundle().apply {
                 putString("NombreServicios", item.NombreServicios)
                 putString("Descripcion", item.Descripcion)
+                putString("correoTrabajador", item.correoEmp) // Añadir correo del trabajador aquí
             }
             // Navegar al ChatFragment
             val navController = Navigation.findNavController(holder.itemView)
