@@ -92,7 +92,7 @@
             android:id="@+id/btnCerrarCesión"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="136dp"
             android:backgroundTint="#599566"
             android:text="Cerrar Cesión"
             android:textColorLink="#A2D8C3"
@@ -100,8 +100,23 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_info_legal"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#599566"
+            android:text="información legal"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.459"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.527" />
 
         <Button
             android:id="@+id/btn_notificaciones"
@@ -113,10 +128,10 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.459"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.766" />
+            app:layout_constraintVertical_bias="0.65" />
 
         <Button
             android:id="@+id/btn_d_personales"
@@ -149,36 +164,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.374" />
-
-        <Button
-            android:id="@+id/btn_asistencia_linea"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#599566"
-            android:text="asistencia en linea"
-            android:textStyle="bold"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.509" />
-
-        <Button
-            android:id="@+id/btn_info_legal"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#599566"
-            android:text="información legal"
-            android:textStyle="bold"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.643" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

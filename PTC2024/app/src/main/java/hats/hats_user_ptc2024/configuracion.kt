@@ -29,7 +29,6 @@ class configuracion : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnPerfilC: Button = view.findViewById(R.id.btn_d_personales)
-        val btnAsistencia: Button = view.findViewById(R.id.btn_asistencia_linea)
         val btnNotificaciones: Button = view.findViewById(R.id.btn_notificaciones)
         val btnInfoLegal: Button = view.findViewById(R.id.btn_info_legal)
         val btnDirreccion: Button = view.findViewById(R.id.btn_direcciones)
@@ -40,9 +39,6 @@ class configuracion : Fragment() {
         }
         btnDirreccion.setOnClickListener {
             findNavController().navigate(R.id.direcciones)
-        }
-        btnAsistencia.setOnClickListener {
-            findNavController().navigate(R.id.asistencia)
         }
         btnNotificaciones.setOnClickListener {
             findNavController().navigate(R.id.notificaciones)
